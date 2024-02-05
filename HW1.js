@@ -1,3 +1,5 @@
-function Hello (){console.log('Hello Андрей')}
-
-Hello()
+function sayHello (){
+    сonsole.log('helloo')
+}
+sayHello()
+// починил
