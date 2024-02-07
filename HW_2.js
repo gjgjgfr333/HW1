@@ -95,7 +95,7 @@ if (data[2]) {
 } else if (typeof data[0].name === "string" && +data[1].age <= 0) {
     console.log("3") // data.name === victor значит не сработает условие
 } else if (typeof data[1].address["zipCode"] === "object") {
-    console.log("4") // честно скажу этого я не знал, и прочитал только что в чате гпт. Потому что это "историческое наследие и Ошибка js.
+    console.log("4") // Когда typeof применяется к null, возвращается "object". Это является историческим наследием и считается ошибкой в языке JavaScript. Фактически, null не является объектом, а является отдельным типом данных в JavaScript.
 } else {
     console.log("5")
 }
