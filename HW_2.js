@@ -4,8 +4,7 @@ const user = {
     age: 24
 }
 delete user.name
-let firstName = 'Eugene'
-user['firstName'] = firstName
+user['firstName'] = 'Eugene'
 console.log(user)
 
 // переделайте объект таким образом, чтобы у него было 2 ключа: firstName и age
@@ -41,7 +40,7 @@ function giveBonus(years, jobEvaluation) {
 }
 
 console.log(giveBonus(yearsOfService, performanceRating))
-let employeInfo = {
+const employeInfo = {
     bonus: bonus, payDay: payDay, allPayDay: allPayDay
 }
 console.log(employeInfo)
@@ -90,13 +89,13 @@ const userData2 = {
 const data = [userData, userData2]
 
 if (data[2]) {
-    console.log("1")
+    console.log("1") // индекс такой не существует
 } else if (data[0].age === data[1].age && !(typeof data[0].name !== "string" || typeof data[1].address.zipCode)) {
-    console.log("2")
+    console.log("2") // первое условие не совпало, значит не выведет в консоль
 } else if (typeof data[0].name === "string" && +data[1].age <= 0) {
-    console.log("3")
+    console.log("3") // data.name === victor значит не сработает условие
 } else if (typeof data[1].address["zipCode"] === "object") {
-    console.log("4")
+    console.log("4") // data[1]..... это объект, выражение вернет true, условие выполниться
 } else {
     console.log("5")
 }
