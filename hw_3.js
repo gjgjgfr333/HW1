@@ -15,3 +15,22 @@ function  getTimeOfDay (num){
 console.log(getTimeOfDay(13
 ))
 // лучше наверное переписать под swith case
+
+for (let i=1; i<11;i++){
+    //console.log(i)
+}
+for (let i=1; i<11;i++){
+    if(i===7){
+        break
+    }
+    //console.log(i)
+}
+
+let number = 1;
+
+while (number <= 20) {
+    if (number % 2 === 0 && number % 5 !== 0) {
+        console.log(number);
+    }
+    number++;
+}
