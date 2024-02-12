@@ -19,18 +19,19 @@ console.log(fruitContainer)
 // Измените название второго фрукта
 
 // 3
-let yearsOfService = 2
-let performanceRating = 2
+let yearsOfService = 1
+let performanceRating = 5
 let bonus = 0
 let payDay = 100
 let allPayDay = 0
 
 function giveBonus(years, jobEvaluation) {
-    if (years < 5 && (jobEvaluation === 4 || jobEvaluation === 5)) {
+    let evaluation =jobEvaluation === 4 || jobEvaluation === 5
+    if (years < 5 && (evaluation)) {
         bonus = (payDay * 0.05)
         allPayDay = bonus + payDay
         return allPayDay
-    } else if (years >= 5 && (jobEvaluation === 4 || jobEvaluation === 5)) {
+    } else if (years >= 5 && (evaluation)) {
         bonus = (payDay * 0.1)
         allPayDay = bonus + payDay
         return allPayDay
