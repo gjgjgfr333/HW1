@@ -34,3 +34,13 @@ while (number <= 20) {
     }
     number++;
 }
+
+function formatPhoneNumber (number){
+    let str = String(number)
+    let code = str.slice(0,3)
+    let treeNum = str.slice(3,7)
+    let end = str.slice(7)
+    return `(${code}) ${treeNum}-${end}`
+}
+
+console.log(formatPhoneNumber(1234567890))
