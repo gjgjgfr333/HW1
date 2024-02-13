@@ -1,46 +1,70 @@
-function  getTimeOfDay (num){
-    if (num >= 0 && num <=5){
-        return 'ночь'
-    }else if (num >=13 && num <=16){
-        return 'день'
-    }else if (num >=17 && num <=24){
-        return 'вечер'
-    }else if (num >5 && num <=12){
-        return 'утро'
+// буду честен с этой задачей мне помог чат гпт, я не понимал как мне в отду строку записывать новые числа, он подсказал мне оператор +=
+const multiplyTabe = function (number){
+    if ( Number.isInteger(number) && number >=1){
+        for (let i = 1; i <=number;i++){
+            let str =''
+            for(let j = 1; j <=number; j++){
+                str += i * j + ' '
+            }
+            console.log(str)
+        }
+    }else{
+        console.log('ВЫ ввели не целое число или отрицательное')
     }
-    else {
-        return 'неправильно число'
+
+}
+multiplyTabe(5)
+
+function calculateFactorial ( num){
+    if (num >1){
+        const arrayNum =[]
+        for (let i =1; i <= num; i++){
+            arrayNum.push(i)
+        }
+        return  arrayNum.reduce((accumulator,curentValue) =>accumulator * curentValue)
+    }else{
+        return 1
     }
-}
-console.log(getTimeOfDay(13
-))
-// лучше наверное переписать под swith case
 
-for (let i=1; i<11;i++){
-    //console.log(i)
 }
-for (let i=1; i<11;i++){
-    if(i===7){
-        break
+console.log(calculateFactorial(5))
+function addWithLoss (firstNum,secondNum,okryglDO){
+    let sum = Math.round((firstNum+secondNum)*10) /10
+    return Number(sum.toFixed(okryglDO || 1))
+}
+console.log(addWithLoss(0.5589,0.25786,2))
+
+function prossesText (str){
+    return str.trim().toLowerCase().replaceAll('a','x')
+}
+console.log(prossesText('     hello WORLDaaaaa    '))
+
+function encode_string(str, key){
+    let encode =''
+    for (let i=0; i <str.length;i++){
+        let strCode = str.charCodeAt(i)
+        encode += String.fromCharCode(strCode +key)
     }
-    //console.log(i)
+    return encode
 }
+console.log(encode_string('helloo, World ', 4))
 
-let number = 1;
-
-while (number <= 20) {
-    if (number % 2 === 0 && number % 5 !== 0) {
-        console.log(number);
+function decode_string(encode_str, key){
+    let decode =''
+    for (let i=0; i <encode_str.length;i++){
+        let strCode = encode_str.charCodeAt(i)
+        decode += String.fromCharCode(strCode -key)
     }
-    number++;
+    return decode
 }
+console.log(decode_string('lippss0$[svph$', 4))
+// тут я спрашивалд гпт чат, потому что про метод CharcodeAt и String..... я не знал, после чего уже написал решение
 
-function formatPhoneNumber (number){
-    let str = String(number)
-    let code = str.slice(0,3)
-    let treeNum = str.slice(3,7)
-    let end = str.slice(7)
-    return `(${code}) ${treeNum}-${end}`
-}
 
-console.log(formatPhoneNumber(1234567890))
+
+
+
+
+
+
+
