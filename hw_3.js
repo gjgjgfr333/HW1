@@ -28,9 +28,9 @@ function calculateFactorial ( num){
 
 }
 console.log(calculateFactorial(5))
-function addWithLoss (firstNum,secondNum,okryglDO){
+function addWithLoss (firstNum,secondNum,roundNumber){
     let sum = Math.round((firstNum+secondNum)*10) /10
-    return Number(sum.toFixed(okryglDO || 1))
+    return Number(sum.toFixed(roundNumber || 1))
 }
 console.log(addWithLoss(0.5589,0.25786,2))
 
