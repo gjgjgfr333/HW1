@@ -28,20 +28,23 @@ function middleNumber(obj) {
 let date = new Date();
 
 function formatDate(date) {
-  const array = [];
-  let years = date.getFullYear();
-  let month = date.getMonth() + 1;
-  let day = date.getDate();
-  let hours = date.getHours();
-  let minutes = date.getMinutes();
-  let seconds = date.getSeconds();
-  month = month.toString().padStart(2, "0");
+  let time = {
+    years: date.getFullYear(),
+    month: date.getMonth() + 1,
+    days: date.getDate(),
+    hours: date.getHours(),
+    minutes: date.getMinutes(),
+    seconds: date.getSeconds(),
+  };
+  for (let key in time) {
+    if (time[key] < 10) {
+      time[key] = "0" + time[key];
+    }
+  }
 
-  return `${day}.${month}.${years}, ${hours}:${minutes}:${seconds}`;
+  return `${time.days}.${time.month}.${time.years}, ${time.hours}:${time.minutes}:${time.seconds}`;
 }
-
-const currentDate = new Date();
-//console.log(formatDate(currentDate));
+console.log(formatDate(date));
 
 //arrays
 const numbers = [3, -1, 8, -4, 5, 2, -7, 6];
