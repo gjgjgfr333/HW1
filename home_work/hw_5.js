@@ -31,48 +31,34 @@ Array.prototype.findAndPush = function (searchEl) {
       let index = this.indexOf(searchEl);
       this.splice(index, 1);
       this.splice(this.length, 0, searchEl);
-      return this;
+      //return this;
+      return true;
     }
   }
-  return `в массиве нет данного элемента: ${searchEl}`;
+  return false;
+  //return `в массиве нет данного элемента: ${searchEl}`;
 };
 
 console.log(arrayNumber.findAndPush(5));
+console.log(arrayNumber);
 
 //3
-function differenceDate(dataStart, dataEnd) {
-  let yesrs = dataEnd.getFullYear() - dataStart.getFullYear();
-  let month = dataEnd.getMonth() - dataStart.getMonth();
-  let days = dataEnd.getDate() - dataStart.getDate();
-  let hours = dataEnd.getHours() - dataStart.getHours();
-  let minutes = dataEnd.getMinutes() - dataStart.getMinutes();
-  let seconds = dataEnd.getSeconds() - dataStart.getSeconds();
+function differenceDate(startData, endData) {
+  let difference = endData - startData;
+  let newDate = new Date(difference);
 
-  if (month < 0) {
-    yesrs--;
-    month += 12;
-  }
-  if (days < 0) {
-    month--;
-    let previousMonthEndDate = new Date(
-      dataEnd.getFullYear(),
-      dataEnd.getMonth(),
-      0,
-    );
-    days += previousMonthEndDate.getDate();
-  }
   return {
-    yesrs: yesrs,
-    month: month,
-    days: days,
-    hours: hours,
-    minutes: minutes,
-    seconds: seconds,
+    years: newDate.getFullYear() - 1970,
+    month: newDate.getMonth(),
+    days: newDate.getDate(),
+    hours: newDate.getHours(),
+    minutes: newDate.getMinutes(),
+    seconds: newDate.getSeconds(),
   };
 }
 
-let startDate = new Date(2023, 7, 20, 12, 0, 0);
-let endDate = new Date(2024, 5, 10, 18, 30, 45);
+let startDate = new Date(2023, 0, 1, 12, 0, 0);
+let endDate = new Date(2024, 5, 15, 18, 30, 45);
 
 console.log(differenceDate(startDate, endDate));
 
@@ -94,7 +80,7 @@ function printStudentInfo(objStudent) {
   return `Student: ${name}, Age: ${age}, Grade: ${grade}, City: ${address.city}, Zip: ${address.zip}, Hobbies: ${hobbies}`;
 }
 
-console.log(printStudentInfo(student));
+//console.log(printStudentInfo(student));
 
 //5
 
@@ -107,5 +93,5 @@ const { name, age } = user;
 const newUser = { name, age };
 newUser.key = 123;
 
-console.log(newUser);
-console.log(user);
+//console.log(newUser);
+//console.log(user);
