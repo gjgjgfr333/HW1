@@ -1,5 +1,5 @@
 function sayHello (){
-    сonsole.log('helloo')
+    console.log('helloo')
 }
 sayHello()
 // починил
