@@ -1,9 +1,9 @@
 //1
 
-let c1: number;
-let c2: string;
-let c3: any[];
-let c4: string[];
+let c1  = 1;
+let c2 : string;
+let c3 : any[];
+let c4 : string[];
 
 
 const check_1: number = c1 + 5;
@@ -70,5 +70,7 @@ a3({});
 a3({ f1: "malaka" });
 const _a4: number = a4();
 const _a5: string = a5(...["lalaka", "malaka"]);
+
+console.log(1111)
 
 
