@@ -10,8 +10,8 @@ function getMaxValue<T>(array: T[]): T {
 
 }
 
-const numbers = [5, 2, 8, 10];
-const strings = ['apple', 'banana', 'orange'];
-const objects = [{ value: 20 }, { value: 15 }, { value: 25 }];
+const numbe = [5, 7, 84, 17];
+const string = ['apple', 'avokado', 'orange'];
+const object = [{ value: 0 }, { value: 1 }, { value: 2 }];
 
-console.log(getMaxValue(numbers))
+console.log(getMaxValue(numbegit))
