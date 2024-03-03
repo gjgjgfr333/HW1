@@ -14,4 +14,4 @@ const numbe = [5, 7, 84, 17];
 const string = ['apple', 'avokado', 'orange'];
 const object = [{ value: 0 }, { value: 1 }, { value: 2 }];
 
-console.log(getMaxValue(numbegit))
+console.log(getMaxValue(numbe))
