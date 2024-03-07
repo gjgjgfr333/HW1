@@ -235,7 +235,7 @@ const response = `
 
 //1 - распарсить данные
 const dataUser = JSON.parse(response)
-
+console.log(dataUser)
 //2 - отсортировать пользователей в алфавитном порядке (поле name)
 const sortData = dataUser.sort((a,b) => {
         return a.name.localeCompare(b.name)
@@ -275,5 +275,5 @@ dataUser.forEach(user => {
     }
 });
 
-console.log(dataUser);
+//console.log(dataUser);
 // Учтите, что входных данных может и не быть, либо они могут быть неверного типа, так что не забывайте про проверки
