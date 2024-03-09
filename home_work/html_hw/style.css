@@ -1,0 +1,74 @@
+.round-image-container {
+    width: 100px; 
+    height: 100px; 
+    overflow: hidden; 
+    border-radius: 50%;
+    margin-right: 60px; 
+}
+.simple_text{
+    color:#2F2F2F;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: normal;
+    font-style: normal;
+}
+.img_text{
+    display: flex;
+    align-items: center;
+    
+}
+h1 {
+    color: black;
+    font-family: Inter;
+    font: size 40px;
+    text-align: center;
+}
+
+.all_text{
+    color:#2F2F2F;
+    font-family: Inter;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: normal;
+    font-style: normal;
+    
+}
+ h2{
+    color: black;
+    font-size: 35px;
+    font-family: Inter;
+    text-align: center;
+ }
+ h3{
+    color: black;
+    font-size: 30px;
+    font-family: Inter;
+    text-align: center;
+ }
+ .header{
+    
+    height: 195px;
+    flex-shrink: 0;
+    border-radius: 0px 0px 15px 15px;
+    border: 1px solid #868585;
+    background: #BBB5B5;
+ }
+.block{
+    border-radius: 15px;
+    border: 1px solid #868585;
+    background: #BBB5B5;
+    padding: 15px;
+    display: flex;
+    width: 1400px;
+    text-align: center;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* Уберем отступы у body */
+}
+
+
+
