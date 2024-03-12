@@ -279,6 +279,9 @@ footer {
     display: none;
 }
 @media screen and (max-width: 768px){
+    h1 {
+        font-size: 30px;
+    }
     .nawMenu.nawMenuAnim{
         right: 0%;
     }
@@ -384,8 +387,12 @@ footer {
     .about{
         position: relative;
     }
+    .end_text1{
+        margin-right: 56px;
+    }
 }
-@media screen and (max-width: 1030px) {
+@media screen and (min-width: 769px) and (max-width: 1030px) {
+
     .navText {
         font-family: Inter;
         font-style: normal;
