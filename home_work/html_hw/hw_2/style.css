@@ -1,0 +1,219 @@
+@font-face {
+    font-family: Inter;
+    src: url(font/Inter-Regular.ttf);
+}
+@font-face {
+    font-family: Forum;
+    src: url(font/Forum-Regular.ttf);
+}
+@font-face {
+    font-family: Inter-bold;
+    src: url(font/Inter-Medium.ttf);
+}
+body {
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    background: #0C0C0E;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+h1{
+
+    font-family: Forum;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 50px;
+    color: #FFFFFF;
+}
+.navText{
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 50px;
+    color: #FFFFFF;
+}
+ul {
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+}
+.iconProfil {
+    display: flex;
+    justify-content: center;
+}
+
+.navPanel{
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+.wellcome{
+    display: flex;
+    height: 600px;
+    background-image: url(photo/Welcome.jpg);
+    background-size: cover;
+    background-position: center;
+
+}
+.about{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.content{
+    margin-top: -10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.line{
+    width: 50px;
+    height: 1px;
+    flex-shrink: 0;
+    background: #0C0C0E;
+    margin-top: -16px;
+
+}
+h2 {
+    color: #0C0C0E;
+    font-family: Forum;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 100% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+.ing {
+    height: 97.72%;
+    width: 31.25%;
+}
+.about_text{
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 40px;
+    color: #000000;
+    text-align: center;
+    margin-top:40px;
+}
+.imgBlock{
+    display: flex;
+    margin-top: 20px;
+
+    justify-content: center;
+    gap: 25px;
+}
+.regtangle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    margin-right: -5px;
+    margin-top: 1px;
+}
+.round_darck{
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #BB945F;
+    cursor: pointer;
+}
+.round_black{
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #0C0C0E;
+    cursor: pointer;
+}
+.block_round{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+a {
+    text-decoration: none;
+}
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 35px;
+}
+.end{
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+    width: 100%;
+    height: 250px;
+    background: #0C0C0E;
+}
+.foter{
+    display: flex;
+    justify-content: space-between;
+}
+.text_end{
+    text-align: end;
+}
+
+.footer_text{
+    color: #FFF;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+.space{
+    width: 229px;
+}
+.space2{
+    width: 149px;
+}
+.ost{
+    margin-top:10px
+}
+.icons{
+    display:flex;
+    gap: 15px;
+    margin-left: -40px;
+    margin-top: 9px;
+}
+.main_footer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.solid{
+    width: 100%;
+    height: 1px;
+    background: #FFF;
+    margin-top: 10px;
+    margin-bottom: 46px;
+}
+.end_text{
+    color: #FFF;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+    letter-spacing: 2px;
+}
