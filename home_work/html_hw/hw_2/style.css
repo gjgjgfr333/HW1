@@ -14,6 +14,7 @@ body {
     margin-top: 0;
     margin-left: auto;
     margin-right: auto;
+    overflow-x: hidden;
 }
 header {
     display: flex;
@@ -278,13 +279,10 @@ footer {
         line-height: 50px;
         color: #FFFFFF;
     }
-    .body{
-        overflow-x: hidden;
-    }
     .nawMenu{
         width: 332px;
         height: 480px;
-        position: absolute;
+        position: fixed;
         display: flex;
         flex-direction: column;
         justify-content: start;
@@ -294,6 +292,7 @@ footer {
         transition: right 0.5s;
         top: 90px;
         gap:30px;
+        overflow: hidden;
     }
     .navPanel{
         display: none;
@@ -375,3 +374,18 @@ footer {
         position: relative;
     }
 }
+@media screen and (max-width: 1030px) {
+    .navText {
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 50px;
+        color: #FFFFFF;
+    }
+    h1{
+        font-size: 20px;
+    }
+}
+
+
