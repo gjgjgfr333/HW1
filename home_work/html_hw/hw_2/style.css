@@ -73,6 +73,15 @@ h1{
     font-size: 20px;
     line-height: 50px;
     color: #FFFFFF;
+    cursor: pointer;
+}
+.navText:hover {
+    color: #6e6d6d;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px; /* 250% */
 }
 ul {
     list-style-type: none;
@@ -293,6 +302,7 @@ footer {
         line-height: 50px;
         color: #FFFFFF;
     }
+
     .nawMenu{
         width: 332px;
         height: 480px;
