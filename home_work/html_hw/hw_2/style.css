@@ -140,6 +140,26 @@ h2 {
     height: 97.72%;
     width: 31.25%;
 }
+.round_darck1{
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #BB945F;
+    cursor: pointer;
+}
+.round_black1{
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #0C0C0E;
+    cursor: pointer;
+}
+.ingDesktop {
+    height: 100%;
+    width: 100%;
+}
 .about_text{
     font-family: Inter;
     font-style: normal;
@@ -151,11 +171,16 @@ h2 {
     margin-top:40px;
 }
 .imgBlock{
+    width: 97.222%;
+    height: 100%;
     display: flex;
+    overflow-x: hidden;
     margin-top: 20px;
-
-    justify-content: center;
-    gap: 25px;
+    margin-left: 1.5%;
+}
+.container1{
+    display: flex;
+    gap:25px;
 }
 .regtangle{
     display: flex;
@@ -278,10 +303,7 @@ footer {
 .block_roundTable{
     display: none;
 }
-.left{
-    display: none;
-}
-.rigt{
+.container{
     display: none;
 }
 .nawMenu{
@@ -368,22 +390,17 @@ footer {
         width: 579.505%;
         height: 100%;
     }
+    .container{
+        display: flex;
+        gap: 60px;
+    }
     .imgBlock_table{
-        width: 90%;
+        width: 60%;
         height: 64.965%;
         display: flex;
-        box-sizing: border-box;
-        padding-left: 159px;
         overflow-x: hidden;
-        gap: 90px;
         margin-top: 20px;
-    }
-    .left{
-        position: absolute;
-        top: 50%;
-        right: 0%;
-        background: red;
-
+        margin-left: 21%;
     }
     .block_round{
         display: none;
