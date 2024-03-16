@@ -110,6 +110,13 @@ ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+}
+.left{
+    display: none;
+}
+.right{
+    display: none;
 }
 .content{
     margin-top: -10px;
@@ -310,6 +317,18 @@ footer {
     display: none;
 }
 @media screen and (max-width: 768px){
+    .left {
+        position: absolute;
+        top: 61.55%;
+        left: 10%;
+        display: block; /* Добавляем отображение элемента */
+    }
+    .right {
+        position: absolute;
+        top: 61.88%;
+        right: 11%;
+        display: block; /* Добавляем отображение элемента */
+    }
     h1 {
         font-size: 30px;
     }
@@ -410,9 +429,6 @@ footer {
         display: flex;
         justify-content: center;
         gap: 4px;
-    }
-    .about{
-        position: relative;
     }
     .end_text1{
         margin-right: 56px;

@@ -69,3 +69,25 @@ dots.forEach((dot, index) => {
     });
 });
 
+//клик на стрелки то что я сейчас сделал
+
+let left = document.querySelector('.left')
+let right = document.querySelector('.right')
+
+left.addEventListener('click', evt => {
+    if (currentImage > 0) {
+        currentImage--;
+        updateDots(dots, currentImage, 'round_darck', 'round_black');
+        container.style.transform = `translateX(-${imageWidth * currentImage}px)`;
+    }
+} )
+right.addEventListener('click', evt => {
+    if (currentImage < images.length - 1) {
+        currentImage++;
+        updateDots(dots, currentImage, 'round_darck', 'round_black');
+        container.style.transform = `translateX(-${imageWidth * currentImage}px)`;
+    }
+} )
+
+
+
