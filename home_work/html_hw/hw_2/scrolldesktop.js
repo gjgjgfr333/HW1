@@ -2,7 +2,17 @@ let container1 = document.querySelector('.container1');
 let startX1;
 let currentImage1 = 0;
 let images1 = document.querySelectorAll('.ingDesktop');
-const imageWidth1 = images1[0].clientWidth + 20; // Ширина изображения + промежуток (25px)
+let containerWidth
+let gapPercentage
+let gapPixels
+let imageWidth1
+window.addEventListener('resize', () => {
+    containerWidth = container1.clientWidth; // Получаем ширину родительского контейнера изображений
+    gapPercentage = 1.8; // Процентное значение промежутка
+    gapPixels = (gapPercentage / 100) * containerWidth;
+    imageWidth1 = images1[0].clientWidth + gapPixels;
+})
+ // Ширина изображения + промежуток (25px)
 
 container1.style.transition = 'transform 0.5s ease'; // Добавляем плавное анимированное перемещение
 
