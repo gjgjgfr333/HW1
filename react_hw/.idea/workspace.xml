@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5df564f9-750a-41d5-a292-5511b183e8ab" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/react_hw.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/for_login_page.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/main_component.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/healper/reducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/healper/slice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/healper/store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/healper/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/login/login_page.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/main/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/HW_1/hm_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/HW_1/hm_1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/HW_1/me.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/HW_1/me.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/HW_1/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/HW_1/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/books.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/favicon/favicon-16x16.png" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/favicon/favicon-16x16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/font/Forum-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/font/Forum-Regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/font/Inter-Light.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/font/Inter-Light.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/font/Inter-Medium.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/font/Inter-Medium.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/font/Inter-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/font/Inter-Regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/icons/left.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/icons/left.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/icons/right.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/icons/right.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/icons/u_facebook-f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/icons/u_facebook-f.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/icons/u_instagram.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/icons/u_instagram.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/icons/u_twitter-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/icons/u_twitter-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/javascript.js" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/javascript.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/library.html" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/library.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/photo/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/photo/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/photo/10.png" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/photo/10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/photo/11.png" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/photo/11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/photo/12.png" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/photo/12.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/photo/13.png" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/photo/13.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/photo/14.png" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/photo/14.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/photo/15.png" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/photo/15.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/photo/16.png" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/photo/16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/photo/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/photo/2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/photo/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/photo/3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/photo/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/photo/4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/photo/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/photo/5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/photo/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/photo/6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/photo/7.png" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/photo/7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/photo/8.png" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/photo/8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/photo/9.png" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/photo/9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/photo/Wellcome.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/photo/Wellcome.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/photo/icon_profile.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/photo/icon_profile.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/photo/image1.png" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/photo/image1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/photo/image2.png" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/photo/image2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/photo/image3.png" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/photo/image3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/photo/image4.png" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/photo/image4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/photo/image5.png" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/photo/image5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/scrolldesktop.js" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/scrolldesktop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home_work/html_hw/hw_2/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../html_hw/hw_2/style.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JSX File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2e0jnccHO6ZpIIv0SkYxjAY8mEs" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/учеба/library",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
+    "npm.start.executor": "Run",
+    "ts.external.directory.path": "D:\\JetBrains\\WebStorm2023.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="npm.start">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5df564f9-750a-41d5-a292-5511b183e8ab" name="Changes" comment="" />
+      <created>1711048557409</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1711048557409</updated>
+      <workItem from="1711048558466" duration="29870000" />
+      <workItem from="1711187711565" duration="15530000" />
+      <workItem from="1711276739241" duration="7168000" />
+      <workItem from="1711305596661" duration="13428000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
