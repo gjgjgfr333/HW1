@@ -4,7 +4,7 @@ const initialState = {
     cityNow: 'Тирасполь',
 };
 
-const coordinatesReducer = (state = initialState, action) => {
+const coordinatesReducer = (state = initialState, action:any) => {
     switch (action.type) {
         case 'SET_COORDINATES':
             return {

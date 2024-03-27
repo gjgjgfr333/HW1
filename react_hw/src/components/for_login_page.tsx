@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
 import '../healper/style.css';
 import { useNavigate} from "react-router-dom";
+import Avatar from "./Avatar";
+import LoginButton from "./loginButton";
 
 const ForLoginPage = () => {
-    const [login, setLogin] = useState('');
-    const [password, setPassword] = useState('');
-    const [repeatPassword, setRepeatPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
+    const [isPhotoUploaded, setIsPhotoUploaded] = useState<boolean>(false);
+    const [login, setLogin] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const [repeatPassword, setRepeatPassword] = useState<string>('');
+    const [errorMessage, setErrorMessage] = useState<string>('');
     const navigate = useNavigate()
 
     const handleLogin = () => {
-        const containsUpperCase = /[A-Z]/.test(password);
-        const containsPunctuation = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/.test(password);
+        const containsUpperCase:boolean = /[A-Z]/.test(password);
+        const containsPunctuation:boolean = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/.test(password);
 
-        let error = '';
+        let error:string = '';
 
         if (login.length < 6) {
             error = 'Логин должен содержать минимум 6 символов';
@@ -40,7 +43,7 @@ const ForLoginPage = () => {
 
     return (
         <div className={'login_block'}>
-            <div className={'avatar'}></div>
+            <Avatar onPhotoUpload={setIsPhotoUploaded}/>
             <input
                 className={'input_login'}
                 type={'text'}
@@ -63,7 +66,7 @@ const ForLoginPage = () => {
                 onChange={(e) => setRepeatPassword(e.target.value)}
             />
             <div className={'error_message'}>{errorMessage}</div>
-            <button className={'logIn'} onClick={handleLogin}>Вход</button>
+            <LoginButton isPhotoUploaded={isPhotoUploaded} handleLogin={handleLogin} />
         </div>
     );
 };

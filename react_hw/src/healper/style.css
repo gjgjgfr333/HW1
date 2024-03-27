@@ -6,12 +6,22 @@
     font-family: Forum;
     src: url(../fonts/Forum-Regular.ttf);
 }
-.avatar{
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+.avatar {
+    width: 250px; /* Ширина контейнера */
+    height: 250px; /* Высота контейнера */
+    border-radius: 50%; /* Круглая форма */
     background-color: cadetblue;
     border: 2px solid teal;
+    position: relative; /* Для позиционирования относительно */
+    display: inline-block; /* Элементы блока, но без переноса строки */
+}
+
+.avatar label {
+    position: absolute; /* Позиционирование относительно родительского контейнера */
+    top: 50%; /* Положение сверху на 50% */
+    left: 50%; /* Положение слева на 50% */
+    transform: translate(-50%, -50%); /* Смещение на 50% ширины и высоты */
+    cursor: pointer; /* Изменение курсора при наведении */
 }
 .input_login{
     font-family: 'Forum', serif;
@@ -44,11 +54,12 @@
     display: flex;
     flex-direction: column;
     gap: 9px;
-
+    z-index: 1;
     cursor: pointer;
 }
 .burger-to-cross .bar:nth-child(1) {
     transform: rotate(-45deg) translate(-4px, 9px);
+    
 }
 
 .burger-to-cross .bar:nth-child(2) {
@@ -64,6 +75,20 @@
     height: 2px;
     background-color: teal;
     transition: 0.4s;
+}
+.menu {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Начальное положение за пределами экрана */
+    width: 300px;
+    height: 100vh;
+    background-color: #ffffff;
+    transition: left 0.3s ease; /* Анимация движения */
+}
+
+/* Класс для анимации выезжания меню */
+.menu.open {
+    left: 0; /* Показываем меню, смещая его влево */
 }
 header{
     display: flex;

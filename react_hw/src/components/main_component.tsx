@@ -1,19 +1,26 @@
 import React, {useEffect, useState} from 'react';
 import '../healper/style.css';
 import {useDispatch, useSelector} from 'react-redux';
-import { setCoordinates } from '../healper/slice';
+import {setCoordinates} from '../healper/slice';
+import Burger from "./burger";
+import Menu from "./menu";
 
-
+interface City {
+    name: string;
+}
 
 const MainComponent = () => {
-    const [city, setCity] = useState('');
+    const [city, setCity] = useState<City>({ name: '' });
     const dispatch = useDispatch();
+    const [isOpen, setIsOpen] = useState(false);
+
+
     const getSearch = () => {
 
         fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&lang=ru&limit=${1}&appid=7e2ff37f25bf00f92d20d0c8c9e5b5e8`)
             .then(response => response.json())
             .then(data => {
-                console.log("search",data)
+                console.log("search", data)
                 if (data && data.length > 0) {
                     const lat = data[0].lat;
                     const lon = data[0].lon;
@@ -28,35 +35,34 @@ const MainComponent = () => {
 
     return (
         <header>
-            <div className="burger-menu" id="burger">
-                <span className="bar"></span>
-                <span className="bar"></span>
-                <span className="bar"></span>
-            </div>
+            <Burger isOpen={isOpen} setIsOpen={setIsOpen} />
+            <Menu isOpen={isOpen} />
             <div>
                 <input
                     type={'text'}
                     placeholder={'Введите город'}
                     className={'search'}
-                    value={city}
-                    onChange={e => setCity(e.target.value)}
-                />
+                    value={city.name}
+                    onChange={(e) => setCity({ name: e.target.value })}/>
                 <button onClick={getSearch}>Поиск</button>
             </div>
         </header>
     );
 };
-const ForecastFiveDays = (props) => {
-    const [formattedDates, setFormattedDates] = useState([]);
-    const [formattedTemperature, setFormattedTemperature] = useState([]);
-    const [formattedTemperatureFeels, setFormattedTemperatureFeels] = useState([]);
-    const [humidity, setHumidity] = useState([]);
-    const [formattedWeather, setFormattedWeather] = useState([]);
-    const latitude = useSelector(state => state.coordinates.lat);
-    const longitude = useSelector(state => state.coordinates.lon);
-    const cityNow = useSelector(state => state.coordinates.cityNow);
+interface WeatherItem {
+    dt: number;
+}
+const ForecastFiveDays = () => {
+    const [formattedDates, setFormattedDates] = useState<string[]>([]);
+    const [formattedTemperature, setFormattedTemperature] = useState<number[]>([]);
+    const [formattedTemperatureFeels, setFormattedTemperatureFeels] = useState<number[]>([]);
+    const [humidity, setHumidity] = useState<(string|undefined)[]>([]);
+    const [formattedWeather, setFormattedWeather] = useState<(string|undefined)[]>([]);
+    const latitude : string = useSelector((state : any ) => state.coordinates.lat);
+    const longitude = useSelector((state : any ) => state.coordinates.lon);
+    const cityNow = useSelector((state : any ) => state.coordinates.cityNow);
 
-    const days = (str) => {
+    const days = (str: string) => {
         let commaIndex = str.indexOf(',');
         let newStr = str.slice(0, commaIndex);
         switch (newStr) {
@@ -79,24 +85,24 @@ const ForecastFiveDays = (props) => {
 
     useEffect(() => {
         if (latitude && longitude) {
-            fetch(props.value)
+            fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lang=ru&lon=${longitude}&appid=7e2ff37f25bf00f92d20d0c8c9e5b5e8`)
                 .then(response => response.json())
-                .then(data => {
+                .then(data  => {
                     console.log('fiveday', data)
                     const newDates = data.list
-                        .filter((item, index) => index % 8 === 0)
-                        .map(item => {
+                        .filter((item : WeatherItem,index: number ) => index % 8 === 0)
+                        .map((item: { dt: number; }) => {
                             const date = new Date(item?.dt * 1000)
-                            const options = {weekday: 'long', month: 'long', day: 'numeric'};
+                            const options : Intl.DateTimeFormatOptions = {weekday: 'long', month: 'long', day: 'numeric'};
                             return date.toLocaleDateString('ru-RU', options);
                         });
 
-                    const extractData = (dataArray, propertyPath) => {
+                    const extractData = (dataArray: string[], propertyPath : string) => {
                         return dataArray
                             .filter((item, index) => index % 8 === 0)
                             .map(item => {
                                 const pathParts = propertyPath.split('.');
-                                let value = item;
+                                let value : string | undefined = item;
                                 for (const part of pathParts) {
                                     if (value && typeof value === 'object') {
                                         value = value[part];
@@ -109,22 +115,33 @@ const ForecastFiveDays = (props) => {
                             });
                     };
 
-                    const newTemperature = extractData(data.list, 'main.temp')
-                        .map(temp => Math.round(+temp - 273));
-                    const newTemperatureFeels = extractData(data.list, 'main.feels_like')
-                        .map(temp => Math.round(temp - 273));
-                    const newHumidity = extractData(data.list, 'main.humidity');
+                    const newTemperature: number[] = extractData(data.list, 'main.temp')
+                        .map((temp: string | undefined) => {
+                            if (temp === undefined) {
+                                return 0;
+                            }
+                            return Math.round(+temp - 273);
+                        });
+                    const newTemperatureFeels: number[] = extractData(data.list, 'main.feels_like')
+                        .map((temp: string | undefined) => {
+                            if (temp === undefined) {
+                                return 0;
+                            }
+                            return Math.round(+temp - 273);
+                        });
+                    const newHumidity:(string | undefined)[] = extractData(data.list, 'main.humidity');
                     const newWeather = extractData(data.list[0].weather, 'description');
 
+                    setFormattedTemperature(newTemperature);
                     setFormattedTemperatureFeels(newTemperatureFeels);
                     setHumidity(newHumidity);
                     setFormattedWeather(newWeather);
-                    setFormattedTemperature(newTemperature);
                     setFormattedDates(newDates);
+
                 })
                 .catch(error => console.error('Error fetching weather data:', error));
         }
-    }, [latitude, longitude, props.value]);
+    }, [latitude, longitude]);
 
     return (
         <>
@@ -148,8 +165,6 @@ const ForecastFiveDays = (props) => {
                         {formattedWeather}
                     </div>
                 </div>
-
-
             </div>
             <div className={'little_block'}>
                 {formattedDates.slice(1).map((singleDate, index) => (
@@ -163,7 +178,6 @@ const ForecastFiveDays = (props) => {
         </>
     )
 }
-
 
 
 // const AirPollutionFireWeather = (props) => {
@@ -276,8 +290,7 @@ const ForecastFiveDays = (props) => {
 // };
 
 
-
-
-export { MainComponent, ForecastFiveDays,
+export {
+    MainComponent, ForecastFiveDays,
     // AirPollutionFireWeather,CurrentWeather
 }
