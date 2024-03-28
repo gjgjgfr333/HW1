@@ -1,54 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState} from 'react';
 import '../healper/style.css';
-import {useDispatch, useSelector} from 'react-redux';
-import {setCoordinates} from '../healper/slice';
-import Burger from "./burger";
-import Menu from "./menu";
-
-interface City {
-    name: string;
-}
-
-const MainComponent = () => {
-    const [city, setCity] = useState<City>({ name: '' });
-    const dispatch = useDispatch();
-    const [isOpen, setIsOpen] = useState(false);
+import { useSelector} from 'react-redux';
 
 
-    const getSearch = () => {
 
-        fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&lang=ru&limit=${1}&appid=7e2ff37f25bf00f92d20d0c8c9e5b5e8`)
-            .then(response => response.json())
-            .then(data => {
-                console.log("search", data)
-                if (data && data.length > 0) {
-                    const lat = data[0].lat;
-                    const lon = data[0].lon;
-                    const cityNow = data[0].local_names.ru
-                    dispatch(setCoordinates(lat, lon, cityNow)); // Отправляем действие к хранилищу Redux
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
-    };
-
-    return (
-        <header>
-            <Burger isOpen={isOpen} setIsOpen={setIsOpen} />
-            <Menu isOpen={isOpen} />
-            <div>
-                <input
-                    type={'text'}
-                    placeholder={'Введите город'}
-                    className={'search'}
-                    value={city.name}
-                    onChange={(e) => setCity({ name: e.target.value })}/>
-                <button onClick={getSearch}>Поиск</button>
-            </div>
-        </header>
-    );
-};
 interface WeatherItem {
     dt: number;
 }
@@ -61,6 +16,8 @@ const ForecastFiveDays = () => {
     const latitude : string = useSelector((state : any ) => state.coordinates.lat);
     const longitude = useSelector((state : any ) => state.coordinates.lon);
     const cityNow = useSelector((state : any ) => state.coordinates.cityNow);
+
+
 
     const days = (str: string) => {
         let commaIndex = str.indexOf(',');
@@ -291,6 +248,6 @@ const ForecastFiveDays = () => {
 
 
 export {
-    MainComponent, ForecastFiveDays,
+     ForecastFiveDays,
     // AirPollutionFireWeather,CurrentWeather
 }

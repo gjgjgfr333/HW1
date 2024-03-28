@@ -32,8 +32,10 @@ const Avatar: React.FC<AvatarProps> = ({ onPhotoUpload }) => {
                 onChange={handlePhotoUpload}
             />
             <div className="avatar">
-                {imgAvatar && <img src={imgAvatar} alt="Uploaded Avatar" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'cover' }} />}
-                <label htmlFor="avatarInput">Загрузить фото</label>
+
+                <label htmlFor="avatarInput">Загрузить фото
+                    {imgAvatar && <img src={imgAvatar} alt="Uploaded Avatar" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'cover' }} />}
+                </label>
             </div>
         </div>
     );
