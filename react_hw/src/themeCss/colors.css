@@ -1,0 +1,54 @@
+/* Dark Theme Colors */
+:root[data-theme="dark"] {
+    --text1: #FFFFFF; /* text */
+    --background1: #302A54; /* back */
+    --card-1: #3E3767; /* card */
+    --text11: #8075C3; /* text2 */
+}
+
+/* Light Theme Colors */
+:root[data-theme="light"] {
+    --background2: #F5FEFF; /* back */
+    --card-2: #FFFFFF; /* card */
+    --text2: #000000; /* text */
+    --text22: #CCCBCB; /* text2 */
+}
+html[data-theme="dark"] {
+    --background-color: #302A54;
+    --color: #FFFFFF;
+    --card: #3E3767;
+    --color2: #8075C3;
+}
+
+html[data-theme="light"] {
+    --background-color: #F5FEFF;
+    --color: #000000;
+    --card: #FFFFFF;
+    --color2: #CCCBCB;
+}
+@use 'themes' as *;
+
+body {
+    background-color: var(--background-color);
+    color: var(--color);
+    overscroll-behavior: none;
+
+    margin: 0;
+    font-family: 'Forum', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.littel_card{
+    width: 187px;
+    height: 290px;
+    box-shadow: 4px 8px 20px rgb(222,219,237);
+    border-radius: 40px;
+    display: flex;
+    background-color:var(--card);
+
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding-top: 32px;
+}
