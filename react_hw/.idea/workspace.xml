@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5df564f9-750a-41d5-a292-5511b183e8ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/themeCss/colors.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Avatar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Avatar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Search.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/for_login_page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/for_login_page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main_component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main_component.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/healper/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/healper/reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/healper/slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/healper/slice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/healper/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/healper/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/healper/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/main/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main/main.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,29 +38,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/Новая папка/JSCourse/react_hw",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
-    "npm.start.executor": "Run",
-    "ts.external.directory.path": "D:\\JetBrains\\WebStorm2023.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Новая папка/JSCourse/react_hw&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\JetBrains\\WebStorm2023.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "SCSS"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;SCSS&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\учеба\задание\react_hw\src\healper" />
@@ -125,7 +113,8 @@
       <workItem from="1711566666310" duration="8707000" />
       <workItem from="1711631443204" duration="5865000" />
       <workItem from="1711728240336" duration="12559000" />
-      <workItem from="1711808056696" duration="2361000" />
+      <workItem from="1711808056696" duration="4110000" />
+      <workItem from="1711813262534" duration="23000" />
     </task>
     <servers />
   </component>
