@@ -1,11 +1,10 @@
 const initialState = {
     lat: '46.8371',
     lon: '29.611',
-    cityNow: "Тирасполь",
+    cityNow: 'Тирасполь',
 };
 
-
-export const coordinatesReducer = (state = initialState, action:any) => {
+export const coordinatesReducer = (state = initialState, action: any) => {
     switch (action.type) {
         case 'SET_COORDINATES':
             return {
