@@ -4,12 +4,12 @@ import {setCoordinates} from "../healper/slice";
 import Burger from "./burger";
 import Menu from "./menu";
 
-interface CityState {
-    string: string;
-}
+// interface CityState {
+//     string: string;
+// }
 
 const Search = () => {
-    const [city, setCity] = useState<CityState>({ string: '' })
+    const [city, setCity] = useState( '' )
     const dispatch = useDispatch();
     const [isOpen, setIsOpen] = useState(false);
     console.log(`cityyy`, city)
@@ -22,13 +22,12 @@ const Search = () => {
             .then(data => {
                 console.log("search",data)
                 if (data && data.length > 0) {
-                    if (data && data.length > 0) {
-                        const lat = data[0].lat;
-                        const lon = data[0].lon;
-                        const cityNow = data[0].local_names.ru
-                        dispatch(setCoordinates(lat, lon, cityNow));
-                    }
+                    const lat = data[0].lat;
+                    const lon = data[0].lon;
+                    const cityNow = data[0].local_names.ru;
+                    dispatch(setCoordinates(lat, lon, cityNow));
                 }
+
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
@@ -41,11 +40,12 @@ const Search = () => {
             <Menu isOpen={isOpen}  lightTheme/>
             <div>
                 <input
-                    type={'text'}
-                    placeholder={'Введите город'}
-                    className={'search'}
-                    value={city.string}
-                    onChange={(e) => setCity({ string: e.target.value })}/>
+                    type="text"
+                    placeholder="Введите город"
+                    className="search"
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
+                />
                 <button onClick={getSearch}>Поиск</button>
             </div>
         </header>
