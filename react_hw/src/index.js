@@ -1,19 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import App from './App';
 import {Provider} from "react-redux";
 import store from "./healper/store";
 import ThemeProvider from "./context/ThemeContext";
-// import '/public/theme/index.scss'
+// import '/public/theme/index.themeCss'
 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
     <ThemeProvider>
         <React.StrictMode>
             <Provider store={store}>
                 <App />
             </Provider>
         </React.StrictMode>
-    </ThemeProvider>
+    </ThemeProvider>,
+    document.getElementById('root')
 );

@@ -1,10 +1,11 @@
 const initialState = {
     lat: '46.8371',
     lon: '29.611',
-    cityNow: 'Тирасполь',
+    cityNow: "Тирасполь",
 };
 
-const coordinatesReducer = (state = initialState, action:any) => {
+
+export const coordinatesReducer = (state = initialState, action:any) => {
     switch (action.type) {
         case 'SET_COORDINATES':
             return {
@@ -18,4 +19,18 @@ const coordinatesReducer = (state = initialState, action:any) => {
     }
 };
 
-export default coordinatesReducer;
+const initialPhoto = {
+    photoUrl: null,
+};
+
+export const photoReducer = (state = initialPhoto, action: any) => {
+    switch (action.type) {
+        case 'SET_PHOTO_URL':
+            return { ...state, photoUrl: action.payload };
+        default:
+            return state;
+    }
+};
+
+
+

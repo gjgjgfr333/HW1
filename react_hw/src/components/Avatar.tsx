@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import {useDispatch} from "react-redux";
+import {setPhotoUrl} from "../healper/slice";
+import '../themeCss/colors.css'
 
 interface AvatarProps {
     onPhotoUpload: (isUploaded: boolean) => void;
@@ -6,7 +9,7 @@ interface AvatarProps {
 
 const Avatar: React.FC<AvatarProps> = ({ onPhotoUpload }) => {
     const [imgAvatar, setImgAvatar] = useState<string | null>(null);
-
+    const dispatch = useDispatch();
     const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files && e.target.files[0];
         if (file) {
@@ -14,6 +17,9 @@ const Avatar: React.FC<AvatarProps> = ({ onPhotoUpload }) => {
             reader.onload = () => {
                 if (typeof reader.result === 'string') {
                     setImgAvatar(reader.result);
+                    const url = reader.result
+                    dispatch(setPhotoUrl(url));
+                    console.log(url)
                 }
             };
             reader.readAsDataURL(file);
@@ -33,8 +39,9 @@ const Avatar: React.FC<AvatarProps> = ({ onPhotoUpload }) => {
             />
             <div className="avatar">
 
-                <label htmlFor="avatarInput">Загрузить фото
-                    {imgAvatar && <img src={imgAvatar} alt="Uploaded Avatar" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'cover' }} />}
+                <label htmlFor="avatarInput">
+                    {imgAvatar && <img src={imgAvatar} alt="Uploaded Avatar" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'cover' }} />
+                    }
                 </label>
             </div>
         </div>

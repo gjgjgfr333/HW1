@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from 'react';
-import '../healper/style.css';
+import '../themeCss/colors.css'
 import { useSelector} from 'react-redux';
 
 
@@ -7,7 +7,7 @@ import { useSelector} from 'react-redux';
 interface WeatherItem {
     dt: number;
 }
-const ForecastFiveDays = () => {
+export const ForecastFiveDays = () => {
     const [formattedDates, setFormattedDates] = useState<string[]>([]);
     const [formattedTemperature, setFormattedTemperature] = useState<number[]>([]);
     const [formattedTemperatureFeels, setFormattedTemperatureFeels] = useState<number[]>([]);
@@ -247,7 +247,7 @@ const ForecastFiveDays = () => {
 // };
 
 
-export {
-     ForecastFiveDays,
-    // AirPollutionFireWeather,CurrentWeather
-}
+// export {
+//      ForecastFiveDays,
+//     // AirPollutionFireWeather,CurrentWeather
+// }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../healper/style.css';
+import '../themeCss/colors.css'
 import { useNavigate} from "react-router-dom";
 import Avatar from "./Avatar";
 import LoginButton from "./loginButton";

@@ -1,5 +1,8 @@
 import React from 'react';
 import Switch from "./switch";
+import {useSelector} from "react-redux";
+
+
 
 interface MenuProps {
     isOpen: boolean;
@@ -7,11 +10,12 @@ interface MenuProps {
 }
 
 const Menu: React.FC<MenuProps> = ({isOpen,lightTheme}) => {
-
+    const photoUrl = useSelector((state:any) => state.photo.photoUrl)
     return (
         <div className={`menu ${isOpen ? 'open' : ''}`}>
-            <div>аватар</div>
-            <div>аватар</div>
+
+            <img className={'avatar_manu'} src={photoUrl} alt={`ph`}/>
+
             <Switch/>
         </div>
     );

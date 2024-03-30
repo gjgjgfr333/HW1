@@ -22,7 +22,10 @@ const Search = () => {
                     const lat = data[0].lat;
                     const lon = data[0].lon;
                     const cityNow = data[0].local_names.ru
-                    dispatch(setCoordinates(lat, lon, cityNow)); // Отправляем действие к хранилищу Redux
+                    console.log(cityNow)
+                    console.log(lat)
+                    console.log(lon)
+                    dispatch(setCoordinates(lat, lon, cityNow));
                 }
             })
             .catch(error => {
