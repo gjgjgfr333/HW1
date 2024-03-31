@@ -1,19 +1,14 @@
 
-export const getAirPopulationResult = async (latitude: string, longitude: string) => {
-    try {
-        const response = await fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${latitude}&lon=${longitude}&appid=7e2ff37f25bf00f92d20d0c8c9e5b5e8`);
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        const resp = await response.json()
-        console.log(resp)
-        // return await response.json();
-    } catch (error) {
-        console.error('Error fetching weather data:', error);
-        throw error;
-    }
+export const getAirPopulationResult = (latitude: string, longitude: string) => {
+   return fetch(`http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=${latitude}&lon=${longitude}&appid=7e2ff37f25bf00f92d20d0c8c9e5b5e8`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Api по загрязнению воздуха не смогло подключиться');
+            }
+            return response.json();
+        })
+}
 
-};
 export const prossesAirPopulation = (data: any): (string | null)[] => {
     if (!data || !data.list || !Array.isArray(data.list)) {
         return [];

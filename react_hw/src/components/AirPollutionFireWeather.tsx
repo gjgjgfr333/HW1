@@ -9,12 +9,15 @@ const AirPollutionFireWeather = () => {
     const longitude = useSelector((state: any) => state.coordinates.lon);
     const [air, setAir] = useState<(string | null)[]>([])
 
+
     useEffect(() => {
         if (latitude && longitude) {
             getAirPopulationResult(latitude,longitude)
-                .then(data => {
+                .then((data) => {
+                    console.log(data)
                     setAir(prossesAirPopulation(data))
                     console.log(prossesAirPopulation(data))
+
                 })
                 .catch(error => {
                     console.error('Error ', error);
@@ -25,10 +28,10 @@ const AirPollutionFireWeather = () => {
     return (
         <div className={'data_main'}>
             <h2>Прогноз загрязнения воздуха на 4 дня</h2>
-            {air.map((date, index) => (
+            {air.map((level, index) => (
                 <div className={'data'} key={index}>
-                    <div className={'data__text'}>{date}</div>
-                    <div className={'data__text'}>загрязнение {air[index]}</div>
+                    <div className={'data__text'}>День {index + 1}</div>
+                    <div className={'data__text'}>Уровень загрязнения: {level}</div>
                 </div>
             ))}
         </div>
