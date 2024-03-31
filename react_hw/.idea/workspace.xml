@@ -5,41 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5df564f9-750a-41d5-a292-5511b183e8ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/api/getSearchResult.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/getWeatherResult.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AvatarStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BurgerStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/LoginButtonStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MainComponentStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MenuStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SearchStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SwithStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/heal/extractData.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/heal/getDays.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/login/LoginStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/main/MainStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/toolkit.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/getAirPopulationResult.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/searchResult.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AirPollutionFireWeather.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/Debouns.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Avatar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AvatarComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/burger.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/for_login_page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/loginButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginButtonComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main_component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MenuComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/switch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SwitchComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/Forum-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/Forum-Regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/Inter-Light.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/Inter-Light.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/Inter-Medium.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/Inter-Medium.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/Inter-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/Inter-Regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/healper/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/healper/slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/healper/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/login/login_page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/LoginPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/main/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main/MainPages.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/getSearchResult.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/getSearchResult.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MainComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SearchComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SearchStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/main/MainPages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main/MainPages.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/themeCss/colors.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/themeCss/colors.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,8 +28,8 @@
         <option value="JSX File" />
         <option value="JavaScript File" />
         <option value="tsconfig.json" />
-        <option value="TypeScript JSX File" />
         <option value="CSS File" />
+        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -159,7 +134,7 @@
       <workItem from="1711808056696" duration="4110000" />
       <workItem from="1711813262534" duration="23000" />
       <workItem from="1711816980790" duration="931000" />
-      <workItem from="1711887339009" duration="9006000" />
+      <workItem from="1711887339009" duration="19132000" />
     </task>
     <servers />
   </component>
