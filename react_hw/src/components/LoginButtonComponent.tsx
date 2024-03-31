@@ -1,9 +1,10 @@
 import React from 'react';
+import './LoginButtonStyle.css'
 interface LoginProps {
     isPhotoUploaded: boolean;
     handleLogin: () => void;
 }
-const LoginButton: React.FC<LoginProps> = ({isPhotoUploaded, handleLogin}) => {
+const LoginButtonComponent: React.FC<LoginProps> = ({isPhotoUploaded, handleLogin}) => {
     return (
         <button className={'logIn'} onClick={handleLogin} disabled={!isPhotoUploaded}>
             Вход
@@ -11,4 +12,4 @@ const LoginButton: React.FC<LoginProps> = ({isPhotoUploaded, handleLogin}) => {
     );
 };
 
-export default LoginButton;
+export default LoginButtonComponent;

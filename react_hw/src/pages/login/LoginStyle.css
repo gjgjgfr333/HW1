@@ -1,0 +1,18 @@
+@import url('../../themeCss/colors.css');
+
+.login_block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+    margin-top: 5%;
+}
+.input_login{
+    font-family: 'Forum', serif;
+    width: 500px;
+    height: 60px;
+    border: 2px solid ;
+    font-size: 25px;
+    border-radius: 15px;
+}

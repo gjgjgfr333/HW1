@@ -1,0 +1,77 @@
+@import url('../themeCss/colors.css');
+.card{
+    width: 555px;
+    height: 295px;
+    border-radius: 40px;
+    box-shadow: 4px 8px 20px rgb(63,40,207);
+    box-sizing: border-box;
+    padding: 32px;
+    display: flex;
+    justify-content: space-between;
+}
+.city{
+    font-family: 'Inter', serif;
+    font-size: 24px;
+    font-weight: 600;
+    display: flex;
+    gap: 10px;
+}
+.temperature_now{
+    font-family: 'Inter', serif;
+    font-size: 64px;
+    font-weight: 900;
+    margin-top: 24px;
+}
+.feelsLike{
+    font-family: 'Inter', serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 8px;
+}
+.card_data{
+    font-family: 'Inter', serif;
+    font-size: 16px;
+    color: var(--color);
+    margin-top: 24px;
+    text-align: end;
+}
+.icon{
+    width: 180px;
+    height: 180px;
+    background-color: darkgoldenrod;
+    border-radius: 50%;
+}
+.little_block{
+    display: flex;
+    gap: 12px;
+}
+.littel_card{
+    width: 187px;
+    height: 290px;
+    box-shadow: 4px 8px 20px rgb(222,219,237);
+    border-radius: 40px;
+    display: flex;
+    background-color:var(--card);
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding-top: 32px;
+}
+.data_days{
+    font-family: 'Inter', serif;
+    font-size: 24px;
+    color: var(--color);
+    font-weight: 600;
+}
+.icon_2{
+    width: 124px;
+    height: 124px;
+    border-radius: 50%;
+    margin-top: 8px;
+    background-color: var(--background-color);
+}
+.temp_2{
+    font-family: 'Inter', serif;
+    font-size: 40px;
+    margin-top: 18px;
+}

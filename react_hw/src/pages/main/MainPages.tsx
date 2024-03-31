@@ -1,16 +1,12 @@
 import React from 'react';
 import {
     ForecastFiveDays
-} from "../../components/main_component";
+} from "../../components/MainComponent";
 import {useSelector} from "react-redux";
-import Search from "../../components/Search";
+import SearchComponent from "../../components/SearchComponent";
+import './MainStyle.css'
 
-
-
-
-
-
-const Main = () => {
+const MainPages = () => {
     // const latitude = useSelector((state:any) => state.coordinates.lat);
     // const longitude = useSelector((state:any) => state.coordinates.lon);
     const cityNow = useSelector((state:any) => state.coordinates.cityNow);
@@ -19,7 +15,7 @@ const Main = () => {
 
     return (
             <div>
-                <Search/>
+                <SearchComponent/>
                 <section className={'main_section'}>
                     <h2>{cityNow}</h2>
                     <div className={'main_div'}>
@@ -31,4 +27,4 @@ const Main = () => {
     );
 };
 
-export default Main;
+export default MainPages;

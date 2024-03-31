@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
+import './BurgerStyle.css'
 interface OpenOrNot {
     isOpen: boolean
     setIsOpen : (isOpen : boolean) => any
 }
-const Burger : React.FC<OpenOrNot> = ({ isOpen, setIsOpen })=> {
+const BurgerComponent : React.FC<OpenOrNot> = ({ isOpen, setIsOpen })=> {
     const handlerOpen = () => {
         setIsOpen(!isOpen)
     }
@@ -16,4 +17,4 @@ const Burger : React.FC<OpenOrNot> = ({ isOpen, setIsOpen })=> {
     );
 };
 
-export default Burger;
+export default BurgerComponent;

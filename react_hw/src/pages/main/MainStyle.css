@@ -1,0 +1,19 @@
+@import url('../../themeCss/colors.css');
+.main_section{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-direction: column;
+}
+.main_div{
+    display: flex;
+    gap: 20px;
+    padding-left: 40px;
+    padding-top: 20px;
+}
+h2{
+    font-family: 'Inter', serif;
+    font-size: 30px;
+    text-align: center;
+    color: var(--color);
+}

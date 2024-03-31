@@ -1,12 +1,12 @@
 import React, { useEffect, useState} from 'react';
-import '../themeCss/colors.css'
+import './MainComponentStyle.css'
 import { useSelector} from 'react-redux';
+import {getDays} from "../heal/getDays";
+import {fetchWeatherData, processWeatherData} from "../api/getWeatherResult";
 
 
 
-interface WeatherItem {
-    dt: number;
-}
+
 export const ForecastFiveDays = () => {
     const [formattedDates, setFormattedDates] = useState<string[]>([]);
     const [formattedTemperature, setFormattedTemperature] = useState<number[]>([]);
@@ -17,84 +17,18 @@ export const ForecastFiveDays = () => {
     const longitude = useSelector((state : any ) => state.coordinates.lon);
     const cityNow = useSelector((state : any ) => state.coordinates.cityNow);
 
-
-
-    const days = (str: string) => {
-        let commaIndex = str.indexOf(',');
-        let newStr = str.slice(0, commaIndex);
-        switch (newStr) {
-            case 'понедельник':
-                return 'ПН';
-            case 'вторник':
-                return 'ВТ';
-            case 'среда':
-                return 'СР';
-            case 'четверг':
-                return 'ЧТ';
-            case 'пятница':
-                return 'ПТ';
-            case 'суббота':
-                return 'СБ';
-            default:
-                return 'ВС';
-        }
-    }
-
     useEffect(() => {
         if (latitude && longitude) {
-            fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lang=ru&lon=${longitude}&appid=7e2ff37f25bf00f92d20d0c8c9e5b5e8`)
-                .then(response => response.json())
-                .then(data  => {
-                    console.log('fiveday', data)
-                    const newDates = data.list
-                        .filter((item : WeatherItem,index: number ) => index % 8 === 0)
-                        .map((item: { dt: number; }) => {
-                            const date = new Date(item?.dt * 1000)
-                            const options : Intl.DateTimeFormatOptions = {weekday: 'long', month: 'long', day: 'numeric'};
-                            return date.toLocaleDateString('ru-RU', options);
-                        });
-
-                    const extractData = (dataArray: string[], propertyPath : string) => {
-                        return dataArray
-                            .filter((item, index) => index % 8 === 0)
-                            .map(item => {
-                                const pathParts = propertyPath.split('.');
-                                let value : string | undefined = item;
-                                for (const part of pathParts) {
-                                    if (value && typeof value === 'object') {
-                                        value = value[part];
-                                    } else {
-                                        value = undefined;
-                                        break;
-                                    }
-                                }
-                                return value;
-                            });
-                    };
-
-                    const newTemperature: number[] = extractData(data.list, 'main.temp')
-                        .map((temp: string | undefined) => {
-                            if (temp === undefined) {
-                                return 0;
-                            }
-                            return Math.round(+temp - 273);
-                        });
-                    const newTemperatureFeels: number[] = extractData(data.list, 'main.feels_like')
-                        .map((temp: string | undefined) => {
-                            if (temp === undefined) {
-                                return 0;
-                            }
-                            return Math.round(+temp - 273);
-                        });
-                    const newHumidity:(string | undefined)[] = extractData(data.list, 'main.humidity');
-                    const newWeather = extractData(data.list[0].weather, 'description');
-
-                    setFormattedTemperature(newTemperature);
-                    setFormattedTemperatureFeels(newTemperatureFeels);
-                    setHumidity(newHumidity);
-                    setFormattedWeather(newWeather);
-                    setFormattedDates(newDates);
-
+            fetchWeatherData(latitude,longitude)
+                .then(data => {
+                    const {formattedDates,formattedTemperature,
+                        formattedTemperatureFeels, humidity,
+                        formattedWeather} = processWeatherData(data)
+                    setFormattedTemperature(formattedTemperature);
+                    setFormattedTemperatureFeels(formattedTemperatureFeels);
+                    setHumidity(humidity);
+                    setFormattedWeather(formattedWeather);
+                    setFormattedDates(formattedDates);
                 })
                 .catch(error => console.error('Error fetching weather data:', error));
         }
@@ -126,7 +60,7 @@ export const ForecastFiveDays = () => {
             <div className={'little_block'}>
                 {formattedDates.slice(1).map((singleDate, index) => (
                     <div className={'littel_card'} key={index}>
-                        <div className={'data_days'}>{days(singleDate)}</div>
+                        <div className={'data_days'}>{getDays(singleDate)}</div>
                         <div className={'icon_2'}></div>
                         <div className={'temp_2'}>{formattedTemperature[index + 1]}°C</div>
                     </div>

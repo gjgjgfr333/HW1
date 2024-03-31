@@ -1,0 +1,12 @@
+@import url('../themeCss/colors.css');
+.logIn{
+    font-family: 'Forum', serif;
+    height: 60px;
+    width: 150px;
+    border: 2px solid teal;
+    font-size: 25px;
+    color: var(--color2);
+    border-radius: 15px;
+    background-color: transparent;
+    cursor: pointer;
+}

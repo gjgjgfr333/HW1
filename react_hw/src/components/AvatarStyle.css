@@ -1,0 +1,21 @@
+@import url('../themeCss/colors.css');
+.avatar {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: var(--background-color);
+    border: 2px solid teal;
+    position: relative; /* Для позиционирования относительно */
+    display: inline-block;
+}
+.avatar label{
+    display: flex;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: var(--background-color);
+    border: 2px solid teal;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}

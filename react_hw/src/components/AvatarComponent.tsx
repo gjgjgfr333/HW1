@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import {useDispatch} from "react-redux";
-import {setPhotoUrl} from "../healper/slice";
-import '../themeCss/colors.css'
+import {setPhotoUrl} from "../redux/slice";
+import './AvatarStyle.css'
 
 interface AvatarProps {
     onPhotoUpload: (isUploaded: boolean) => void;
 }
 
-const Avatar: React.FC<AvatarProps> = ({ onPhotoUpload }) => {
+const AvatarComponent: React.FC<AvatarProps> = ({ onPhotoUpload }) => {
     const [imgAvatar, setImgAvatar] = useState<string | null>(null);
     const dispatch = useDispatch();
     const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -37,10 +37,9 @@ const Avatar: React.FC<AvatarProps> = ({ onPhotoUpload }) => {
                 style={{ position: 'absolute', top: '-300px', width: '200px' }}
                 onChange={handlePhotoUpload}
             />
-            <div className="avatar">
-
+            <div className={'avatar'}>
                 <label htmlFor="avatarInput">
-                    {imgAvatar && <img src={imgAvatar} alt="Uploaded Avatar" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'cover' }} />
+                    {imgAvatar && <img src={imgAvatar} alt="Uploaded AvatarComponent" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'cover' }} />
                     }
                 </label>
             </div>
@@ -48,4 +47,4 @@ const Avatar: React.FC<AvatarProps> = ({ onPhotoUpload }) => {
     );
 };
 
-export default Avatar;
+export default AvatarComponent;

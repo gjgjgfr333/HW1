@@ -1,24 +1,21 @@
 import React from 'react';
-import Switch from "./switch";
+import SwitchComponent from "./SwitchComponent";
 import {useSelector} from "react-redux";
-
-
+import './MenuStyle.css'
 
 interface MenuProps {
     isOpen: boolean;
     lightTheme: boolean
 }
 
-const Menu: React.FC<MenuProps> = ({isOpen,lightTheme}) => {
+const MenuComponent: React.FC<MenuProps> = ({isOpen,lightTheme}) => {
     const photoUrl = useSelector((state:any) => state.photo.photoUrl)
     return (
         <div className={`menu ${isOpen ? 'open' : ''}`}>
-
             <img className={'avatar_manu'} src={photoUrl} alt={`ph`}/>
-
-            <Switch/>
+            <SwitchComponent/>
         </div>
     );
 };
 
-export default Menu;
+export default MenuComponent;

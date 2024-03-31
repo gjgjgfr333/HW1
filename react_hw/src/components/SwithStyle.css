@@ -1,0 +1,29 @@
+@import url('../themeCss/colors.css');
+.switch {
+    width: 50px;
+    height: 30px;
+    background-color: var(--color);
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+}
+.switch_round {
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.switch_round.dark {
+    transform: translate(22px, -50%);
+    background-color: black;
+}
+
+.switch_round.light {
+    transform: translate(-2px, -50%);
+    background-color: blanchedalmond;
+}

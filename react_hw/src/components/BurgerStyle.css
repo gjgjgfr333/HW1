@@ -1,0 +1,27 @@
+@import url('../themeCss/colors.css');
+.burger-menu{
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    z-index: 1;
+    cursor: pointer;
+}
+.burger-to-cross .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-4px, 9px);
+
+}
+
+.burger-to-cross .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-to-cross .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -10px);
+}
+.bar {
+    display: block;
+    width: 45px;
+    height: 2px;
+    background-color: teal;
+    transition: 0.4s;
+}

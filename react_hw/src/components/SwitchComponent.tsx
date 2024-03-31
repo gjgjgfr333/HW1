@@ -1,8 +1,9 @@
 import React, {useContext, useEffect} from 'react';
 import {ThemeContext} from "../context/ThemeContext";
+import './SwithStyle.css'
 
 
-const Switch = () => {
+const SwitchComponent = () => {
     const { isDarkMode, toggleTheme } = useContext(ThemeContext);
     useEffect(() => {
         document.documentElement.setAttribute(
@@ -19,4 +20,4 @@ const Switch = () => {
     );
 };
 
-export default Switch;
+export default SwitchComponent;

@@ -1,0 +1,19 @@
+@import url('../themeCss/colors.css');
+.menu {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Начальное положение за пределами экрана */
+    width: 300px;
+    height: 100vh;
+    background-color: var(--background-color);
+    transition: left 0.3s ease;
+}
+.menu.open {
+    left: 0;
+}
+.avatar_manu{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+}

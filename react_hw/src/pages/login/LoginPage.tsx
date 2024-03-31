@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import '../themeCss/colors.css'
+import './LoginStyle.css'
 import { useNavigate} from "react-router-dom";
-import Avatar from "./Avatar";
-import LoginButton from "./loginButton";
+import AvatarComponent from "../../components/AvatarComponent";
+import LoginButtonComponent from "../../components/LoginButtonComponent";
+
+
 
 const ForLoginPage = () => {
     const [isPhotoUploaded, setIsPhotoUploaded] = useState<boolean>(false);
@@ -43,7 +45,7 @@ const ForLoginPage = () => {
 
     return (
         <div className={'login_block'}>
-            <Avatar onPhotoUpload={setIsPhotoUploaded}/>
+            <AvatarComponent onPhotoUpload={setIsPhotoUploaded}/>
             <input
                 className={'input_login'}
                 type={'text'}
@@ -66,7 +68,7 @@ const ForLoginPage = () => {
                 onChange={(e) => setRepeatPassword(e.target.value)}
             />
             <div className={'error_message'}>{errorMessage}</div>
-            <LoginButton isPhotoUploaded={isPhotoUploaded} handleLogin={handleLogin} />
+            <LoginButtonComponent isPhotoUploaded={isPhotoUploaded} handleLogin={handleLogin} />
         </div>
     );
 };
