@@ -5,6 +5,7 @@ import {
 import {useSelector} from "react-redux";
 import SearchComponent from "../../components/SearchComponent";
 import './MainStyle.css'
+import AirPollutionFireWeather from "../../components/AirPollutionFireWeather";
 
 const MainPages = () => {
     // const latitude = useSelector((state:any) => state.coordinates.lat);
@@ -20,7 +21,9 @@ const MainPages = () => {
                     <h2>{cityNow}</h2>
                     <div className={'main_div'}>
                         <ForecastFiveDays/>
+
                     </div>
+                    <AirPollutionFireWeather/>
                 </section>
             </div>
 

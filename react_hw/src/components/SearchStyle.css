@@ -6,4 +6,19 @@
     border-radius: 15px;
     border: 2px solid var(--boarder);
     font-size: 20px;
+    position: relative;
+}
+.suggestions{
+    background-color: var(--menu);
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 408px;
+}
+.suggestion{
+    padding: 15px;
+    font-family: 'Inter', serif;
+    font-size: 20px;
+    color: var(--color);
+    border: var(--boarder);
 }

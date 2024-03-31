@@ -4,7 +4,8 @@
     --background1: #302A54; /* back */
     --card-1: #3E3767; /* card */
     --color2: #8075C3; /* text2 */
-    --boarder: #ffffff
+    --boarder: #ffffff;
+    --menu: #000000;
 }
 
 /* Light Theme Colors */
@@ -13,7 +14,8 @@
     --card-3: #FFFFFF; /* card */
     --colorL: #000000; /* text */
     --color4: #CCCBCB; /* text2 */
-    --boarder: #CCCBCB
+    --boarder: #CCCBCB;
+    --menu: #ffffff;
 }
 html[data-theme="dark"] {
     --background-color: #302A54;

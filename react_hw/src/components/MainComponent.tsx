@@ -71,69 +71,7 @@ export const ForecastFiveDays = () => {
 }
 
 
-// const AirPollutionFireWeather = (props) => {
-//     const latitude = useSelector(state => state.coordinates.lat);
-//     const longitude = useSelector(state => state.coordinates.lon);
-//     const [date, setDate] = useState([])
-//     const [air, setAir] = useState([])
-//
-//     useEffect(() => {
-//         if (latitude && longitude) {
-//             fetch(props.value)
-//                 .then(response => {
-//                     if (!response.ok) {
-//                         throw new Error('Api по загрязнению воздуха не смогло подключиться');
-//                     }
-//                     return response.json();
-//                 })
-//                 .then(data => {
-//                     console.log('воздух',data)
-//                     const arrayDate = data.list
-//                         .filter((item, index) => index % 24 === 0)
-//                         .map(item => {
-//                             const date = new Date(item?.dt * 1000)
-//                             const options = {weekday: 'long', month: 'long', day: 'numeric'};
-//                             return date.toLocaleDateString('ru-RU', options);
-//                         });
-//                     const arrayAir = data.list
-//                         .filter((item,index) => index %24 ===0)
-//                         .map(item =>{
-//                             switch (item.main?.aqi ){
-//                                 case 1:
-//                                     return `очень низкий`
-//                                 case 2:
-//                                     return `низкий`
-//                                 case 3:
-//                                     return `средний`
-//                                 case 4:
-//                                     return `высокий`
-//                                 case 5:
-//                                     return `очень высокий`
-//                                 default:
-//                                     return null
-//                             }
-//                         })
-//                     setAir(arrayAir)
-//                     setDate(arrayDate)
-//                 })
-//                 .catch(error => {
-//                     console.error('Error ', error);
-//                 });
-//         }
-//     }, [latitude, longitude, props.srs,props.value]);
-//
-//     return (
-//         <div className={'data_main'}>
-//             <h2>Прогноз загрязнения воздуха на 4 дня</h2>
-//             {date.map((date, index) => (
-//                 <div className={'data'} key={index}>
-//                     <div className={'data__text'}>{date}</div>
-//                     <div className={'data__text'}>{props.title}: {air[index]}</div>
-//                 </div>
-//             ))}
-//         </div>
-//     );
-// }
+
 //
 // //текущий прогноз
 // const CurrentWeather = () => {
