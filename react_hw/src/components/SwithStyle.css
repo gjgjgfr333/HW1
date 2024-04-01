@@ -27,3 +27,29 @@
     transform: translate(-2px, -50%);
     background-color: blanchedalmond;
 }
+
+.switch_wrapper {
+    position: relative;
+    width: 50px; /* Ширина всего переключателя */
+    height: 30px; /* Высота всего переключателя */
+}
+
+.switch_round.light {
+    transform: translate(-2px, -50%); /* Перемещение только круглого переключателя */
+    background-color: blanchedalmond;
+}
+
+.switch_round.dark {
+    transform: translate(22px, -50%); /* Перемещение только круглого переключателя */
+    background-color: black;
+}
+.light {
+    transform: translate(-2px, -50%);
+    background-color: blanchedalmond;
+}
+
+
+.dark {
+    transform: translate(22px, -50%);
+    background-color: black;
+}

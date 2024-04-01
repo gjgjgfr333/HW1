@@ -7,6 +7,7 @@ import {getSearchResult} from "../api/getSearchResult";
 import {useDebounce} from "../hooks/Debouns";
 import {setCoordinates} from "../redux/slice";
 import {searchResult} from "../api/searchResult";
+import i18n from "i18next";
 interface SearchResult {
     cityNow: string;
 }
@@ -35,7 +36,7 @@ const SearchComponent = () => {
         setSuggestions([]); 
     };
     const handleSearch = () => {
-        searchResult(city, dispatch)
+        searchResult(city, dispatch, i18n)
 
     };
     return (
@@ -51,10 +52,8 @@ const SearchComponent = () => {
                         value={city}
                         onChange={(e) => setCity(e.target.value)}
                     />
-                    {/* Отображаем окно подсказок только если введенные буквы есть */}
                     {suggestions.length > 0 && (
                         <div className="suggestions">
-                            {/* Отрисовываем подсказки */}
                             {suggestions.map((item, index) => (
                                 <div key={index} className="suggestion" onClick={() => handleSuggestionClick(item.cityNow)}>
                                     {item.cityNow}

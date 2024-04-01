@@ -3,6 +3,7 @@ import './MainComponentStyle.css'
 import { useSelector} from 'react-redux';
 import {getDays} from "../heal/getDays";
 import {fetchWeatherData, processWeatherData} from "../api/getWeatherResult";
+import {useTranslation} from "react-i18next";
 
 
 
@@ -16,14 +17,16 @@ export const ForecastFiveDays = () => {
     const latitude : string = useSelector((state : any ) => state.coordinates.lat);
     const longitude = useSelector((state : any ) => state.coordinates.lon);
     const cityNow = useSelector((state : any ) => state.coordinates.cityNow);
+    const { t, i18n } = useTranslation()
 
     useEffect(() => {
         if (latitude && longitude) {
-            fetchWeatherData(latitude,longitude)
+            fetchWeatherData(latitude,longitude, i18n)
                 .then(data => {
+                    console.log(data)
                     const {formattedDates,formattedTemperature,
                         formattedTemperatureFeels, humidity,
-                        formattedWeather} = processWeatherData(data)
+                        formattedWeather} = processWeatherData(data, i18n.language, i18n)
                     setFormattedTemperature(formattedTemperature);
                     setFormattedTemperatureFeels(formattedTemperatureFeels);
                     setHumidity(humidity);
@@ -32,7 +35,7 @@ export const ForecastFiveDays = () => {
                 })
                 .catch(error => console.error('Error fetching weather data:', error));
         }
-    }, [latitude, longitude]);
+    }, [latitude, longitude, i18n]);
 
     return (
         <>
@@ -40,13 +43,14 @@ export const ForecastFiveDays = () => {
                 <div>
                     <div className={'city'}>
                         {cityNow}
-                        <div>сейчас</div>
+                        <div>{t('Now')}</div>
                     </div>
                     <div className={'temperature_now'}>
                         {formattedTemperature[0]}°C
                     </div>
                     <div className={'feelsLike'}>
-                        Ощущается как {formattedTemperatureFeels[0]}°C
+                        {t("feelsHow")}
+                        {formattedTemperatureFeels[0]}°C
                     </div>
                     <div className={'card_data'}>{formattedDates[0]}</div>
                 </div>
@@ -60,7 +64,7 @@ export const ForecastFiveDays = () => {
             <div className={'little_block'}>
                 {formattedDates.slice(1).map((singleDate, index) => (
                     <div className={'littel_card'} key={index}>
-                        <div className={'data_days'}>{getDays(singleDate)}</div>
+                        <div className={'data_days'}>{getDays(singleDate, i18n)}</div>
                         <div className={'icon_2'}></div>
                         <div className={'temp_2'}>{formattedTemperature[index + 1]}°C</div>
                     </div>

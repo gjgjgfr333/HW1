@@ -1,20 +1,31 @@
-export const getDays = (str: string) => {
+import i18n from "i18next";
+
+export const getDays = (str: string, i18n: any) => {
     let commaIndex = str.indexOf(',');
     let newStr = str.slice(0, commaIndex);
     switch (newStr) {
         case 'понедельник':
-            return 'ПН';
+        case 'Monday':
+            return i18n.t('Monday');
         case 'вторник':
-            return 'ВТ';
+        case 'Tuesday':
+            return i18n.t('Tuesday');
         case 'среда':
-            return 'СР';
+        case 'Wednesday':
+            return i18n.t('Wednesday');
         case 'четверг':
-            return 'ЧТ';
+        case 'Thursday':
+            return i18n.t('Thursday');
         case 'пятница':
-            return 'ПТ';
+        case 'Friday':
+            return i18n.t('Friday');
         case 'суббота':
-            return 'СБ';
+        case 'Saturday':
+            return i18n.t('Saturday');
+        case 'воскресенье':
+        case 'Sunday':
+            return i18n.t('Sunday');
         default:
-            return 'ВС';
+            return '';
     }
-}
+};
