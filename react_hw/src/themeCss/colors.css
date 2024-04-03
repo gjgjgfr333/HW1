@@ -6,6 +6,9 @@
     --color2: #8075C3; /* text2 */
     --boarder: #ffffff;
     --menu: #000000;
+    --img1: url('../../public/images/Group1.png');
+    --img2: url('../../public/images/Group2.png');
+    --img3: url('../../public/images/Frame1.png')
 }
 
 /* Light Theme Colors */
@@ -16,6 +19,9 @@
     --color4: #CCCBCB; /* text2 */
     --boarder: #CCCBCB;
     --menu: #ffffff;
+    --img1: url('../../public/images/Group13.png');
+    --img2: url('../../public/images/Group12.png');
+    --img3: url('../../public/images/Frame1.png');
 }
 html[data-theme="dark"] {
     --background-color: #302A54;
@@ -32,13 +38,15 @@ html[data-theme="light"] {
 }
 
 body {
-    width: 1440px;
+    width: auto;
     background-color: var(--background-color);
     color: var(--color);
     overscroll-behavior: none;
     overflow-x: hidden;
+    margin-left: auto;
+    margin-right: auto;
 
-    margin: 0;
+    margin-top: 0;
     font-family: 'Forum', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

@@ -33,3 +33,14 @@ export const prossesAirPopulation = (data: any): (string | null)[] => {
             }
         });
 };
+export const getNumberAirPopulation = (data: any): (string | null)[] => {
+    if (!data || !data.list || !Array.isArray(data.list)) {
+        return [];
+    }
+
+    return data.list
+        .filter((item: any, index: number) => index % 24 === 0)
+        .map((item:any) => {
+            return item.main?.aqi
+        })
+}

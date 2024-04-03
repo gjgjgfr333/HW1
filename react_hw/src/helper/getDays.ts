@@ -1,4 +1,4 @@
-import i18n from "i18next";
+
 
 export const getDays = (str: string, i18n: any) => {
     let commaIndex = str.indexOf(',');

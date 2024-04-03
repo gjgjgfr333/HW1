@@ -1,10 +1,11 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import {coordinatesReducer} from './reducer';
+import {coordinatesReducer, loginReducer} from './reducer';
 import {photoReducer} from './reducer';
 
 const rootReducer = combineReducers({
     coordinates: coordinatesReducer,
-    photo: photoReducer
+    photo: photoReducer,
+    logins: loginReducer
 });
 
 const store = configureStore({

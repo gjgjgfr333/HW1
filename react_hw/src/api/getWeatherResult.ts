@@ -1,10 +1,10 @@
-import {extractData} from "../heal/extractData";
-import {useTranslation} from "react-i18next";
+import {extractData} from "../helper/extractData";
+import {processTemperature} from "../helper/tempData";
 export interface WeatherItem {
     dt: number;
 }
 
-// weatherAPI.ts
+
 
 export interface WeatherItem {
     dt: number;
@@ -33,21 +33,12 @@ export const processWeatherData = (data: any, language: string, i18n: any) => {
         });
 
     const newTemperature: number[] = extractData(data.list, 'main.temp')
-        .map((temp: string | undefined) => {
-            if (temp === undefined) {
-                return 0;
-            }
-            return Math.round(+temp - 273);
-        });
+        .map(processTemperature);
     const newTemperatureFeels: number[] = extractData(data.list, 'main.feels_like')
-        .map((temp: string | undefined) => {
-            if (temp === undefined) {
-                return 0;
-            }
-            return Math.round(+temp - 273);
-        });
+        .map(processTemperature);
     const newHumidity:(string | undefined)[] = extractData(data.list, 'main.humidity');
     const newWeather = extractData(data.list[0].weather, 'description');
+    const newWind = extractData(data.list, 'wind.speed')
 
     return {
         formattedDates: newDates,
@@ -55,6 +46,7 @@ export const processWeatherData = (data: any, language: string, i18n: any) => {
         formattedTemperature: newTemperature,
         formattedTemperatureFeels: newTemperatureFeels,
         humidity: newHumidity,
+        wind: newWind
     };
 };
 

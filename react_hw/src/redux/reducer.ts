@@ -31,5 +31,18 @@ export const photoReducer = (state = initialPhoto, action: any) => {
     }
 };
 
+const initialLogin = {
+    login: 'Имя',
+};
+
+export const loginReducer = (state = initialLogin, action: any) => {
+    switch (action.type) {
+        case 'SET_LOGIN':
+            return { ...state, login: action.payload };
+        default:
+            return state;
+    }
+};
+
 
 

@@ -44,18 +44,20 @@
 .little_block{
     display: flex;
     gap: 12px;
+    cursor: pointer;
 }
-.littel_card{
-    width: 187px;
-    height: 290px;
+
+
+.little_card{
     box-shadow: 4px 8px 20px rgb(222,219,237);
     border-radius: 40px;
-    display: flex;
     background-color:var(--card);
-    flex-direction: column;
     align-items: center;
-    box-sizing: border-box;
-    padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+
+
 }
 .data_days{
     font-family: 'Inter', serif;

@@ -5,7 +5,6 @@ import MenuComponent from "./MenuComponent";
 import './SearchStyle.css'
 import {getSearchResult} from "../api/getSearchResult";
 import {useDebounce} from "../hooks/Debouns";
-import {setCoordinates} from "../redux/slice";
 import {searchResult} from "../api/searchResult";
 import i18n from "i18next";
 interface SearchResult {
@@ -43,7 +42,7 @@ const SearchComponent = () => {
         <header>
             <BurgerComponent isOpen={isOpen} setIsOpen={setIsOpen} />
             <MenuComponent isOpen={isOpen} lightTheme/>
-            <div>
+            <div className={'search_button'}>
                 <div>
                     <input
                         type="text"
@@ -51,6 +50,11 @@ const SearchComponent = () => {
                         className="search"
                         value={city}
                         onChange={(e) => setCity(e.target.value)}
+                        onKeyPress={(e) => {
+                            if (e.key === 'Enter') {
+                                handleSearch(); // Добавлены скобки для вызова функции
+                            }
+                        }}
                     />
                     {suggestions.length > 0 && (
                         <div className="suggestions">
@@ -63,7 +67,7 @@ const SearchComponent = () => {
                     )}
                 </div>
 
-                <button onClick={handleSearch}>Поиск</button>
+                <button className={'button_search'} onClick={handleSearch}><div className={'icon_search'}></div></button>
             </div>
         </header>
     );

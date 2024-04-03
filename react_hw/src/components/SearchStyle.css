@@ -22,3 +22,22 @@
     color: var(--color);
     border: var(--boarder);
 }
+.icon_search{
+    background: url('../../public/images/search.svg');
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+}
+.button_search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #755FFC;
+}
+.search_button{
+    display: flex;
+    gap: 20px;
+}

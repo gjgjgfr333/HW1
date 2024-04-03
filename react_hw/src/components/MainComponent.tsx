@@ -1,79 +1,81 @@
 import React, { useEffect, useState} from 'react';
 import './MainComponentStyle.css'
 import { useSelector} from 'react-redux';
-import {getDays} from "../heal/getDays";
+import {getDays} from "../helper/getDays";
 import {fetchWeatherData, processWeatherData} from "../api/getWeatherResult";
 import {useTranslation} from "react-i18next";
 
-
-
-
-export const ForecastFiveDays = () => {
+export const ForecastFiveDays = (props: any) => {
     const [formattedDates, setFormattedDates] = useState<string[]>([]);
     const [formattedTemperature, setFormattedTemperature] = useState<number[]>([]);
-    const [formattedTemperatureFeels, setFormattedTemperatureFeels] = useState<number[]>([]);
-    const [humidity, setHumidity] = useState<(string|undefined)[]>([]);
+    const [formattedTemperatureFeels, setFormattedTemperatureFeels] = useState<number[]>([]);;
     const [formattedWeather, setFormattedWeather] = useState<(string|undefined)[]>([]);
     const latitude : string = useSelector((state : any ) => state.coordinates.lat);
     const longitude = useSelector((state : any ) => state.coordinates.lon);
     const cityNow = useSelector((state : any ) => state.coordinates.cityNow);
     const { t, i18n } = useTranslation()
 
+
+
+
     useEffect(() => {
         if (latitude && longitude) {
             fetchWeatherData(latitude,longitude, i18n)
                 .then(data => {
-                    console.log(data)
+                    console.log('datda',data)
                     const {formattedDates,formattedTemperature,
                         formattedTemperatureFeels, humidity,
-                        formattedWeather} = processWeatherData(data, i18n.language, i18n)
+                        formattedWeather, wind} = processWeatherData(data, i18n.language, i18n)
                     setFormattedTemperature(formattedTemperature);
                     setFormattedTemperatureFeels(formattedTemperatureFeels);
-                    setHumidity(humidity);
+                    props.setHumidity(humidity);
                     setFormattedWeather(formattedWeather);
                     setFormattedDates(formattedDates);
+                    props.setWind(wind)
                 })
                 .catch(error => console.error('Error fetching weather data:', error));
         }
-    }, [latitude, longitude, i18n]);
+    }, [latitude, longitude, i18n.language]);
 
     return (
         <>
-            <div className={'card'}>
-                <div>
-                    <div className={'city'}>
-                        {cityNow}
-                        <div>{t('Now')}</div>
-                    </div>
-                    <div className={'temperature_now'}>
-                        {formattedTemperature[0]}°C
-                    </div>
-                    <div className={'feelsLike'}>
-                        {t("feelsHow")}
-                        {formattedTemperatureFeels[0]}°C
-                    </div>
-                    <div className={'card_data'}>{formattedDates[0]}</div>
-                </div>
-                <div>
-                    <div className={'icon'}></div>
-                    <div className={'card_data'}>
-                        {formattedWeather}
-                    </div>
-                </div>
-            </div>
-            <div className={'little_block'}>
-                {formattedDates.slice(1).map((singleDate, index) => (
-                    <div className={'littel_card'} key={index}>
-                        <div className={'data_days'}>{getDays(singleDate, i18n)}</div>
-                        <div className={'icon_2'}></div>
-                        <div className={'temp_2'}>{formattedTemperature[index + 1]}°C</div>
+                {formattedDates.map((singleDate, index) => (
+                    <div className={'little_block'} key={index} onClick={() => props.handleCardClick(index)}>
+                        {props.expandedCardIndex === index ? (
+                            <div className={'card'}>
+                                <div>
+                                    <div className={'city'}>
+                                        {cityNow}
+                                        <div>{t('Now')}</div>
+                                    </div>
+                                    <div className={'temperature_now'}>
+                                        {formattedTemperature[index]}°C
+                                    </div>
+                                    <div className={'feelsLike'}>
+                                        {t("feelsHow")}
+                                        {formattedTemperatureFeels[index]}°C
+                                    </div>
+                                    <div className={'card_data'}>{formattedDates[index]}</div>
+                                </div>
+                                <div>
+                                    <div className={'icon'}></div>
+                                    <div className={'card_data'}>
+                                        {formattedWeather}
+                                    </div>
+                                </div>
+                            </div>
+                        ) : (
+                            <div className={'little_card'}>
+                                <div className={'data_days'}>{getDays(singleDate, i18n)}</div>
+                                <div className={'icon_2'}></div>
+                                <div className={'temp_2'}>{formattedTemperature[index]}°C</div>
+                            </div>
+                        )}
                     </div>
                 ))}
-            </div>
         </>
     )
 }
-
 
 
 //

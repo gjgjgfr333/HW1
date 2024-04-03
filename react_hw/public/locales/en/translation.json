@@ -8,6 +8,9 @@
   "Friday": "FR",
   "Saturday": "SA",
   "Sunday" : "SU",
-  "City": "Tiraspol"
+  "City": "Tiraspol",
+  "Index": "Air Pollution Index",
+  "humidity": "Humidity",
+  "wind": "Speed wind"
 
 }

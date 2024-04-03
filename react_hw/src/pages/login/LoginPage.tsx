@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import './LoginStyle.css'
-import { useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import AvatarComponent from "../../components/AvatarComponent";
 import LoginButtonComponent from "../../components/LoginButtonComponent";
+import {useDispatch} from "react-redux";
+import {setLogins} from "../../redux/slice";
 
 
 
@@ -13,12 +15,13 @@ const ForLoginPage = () => {
     const [repeatPassword, setRepeatPassword] = useState<string>('');
     const [errorMessage, setErrorMessage] = useState<string>('');
     const navigate = useNavigate()
-
+    const dispatch = useDispatch()
     const handleLogin = () => {
-        const containsUpperCase:boolean = /[A-Z]/.test(password);
-        const containsPunctuation:boolean = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/.test(password);
+        const containsUpperCase: boolean = /[A-Z]/.test(password);
+        const containsPunctuation: boolean = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/.test(password);
 
-        let error:string = '';
+
+        let error: string = '';
 
         if (login.length < 6) {
             error = 'Логин должен содержать минимум 6 символов';
@@ -39,6 +42,7 @@ const ForLoginPage = () => {
         if (!error) {
             console.log('Логин и пароль верны');
             navigate('/pages/main')
+            dispatch(setLogins ( login) )
 
         }
     };
@@ -68,7 +72,7 @@ const ForLoginPage = () => {
                 onChange={(e) => setRepeatPassword(e.target.value)}
             />
             <div className={'error_message'}>{errorMessage}</div>
-            <LoginButtonComponent isPhotoUploaded={isPhotoUploaded} handleLogin={handleLogin} />
+            <LoginButtonComponent isPhotoUploaded={isPhotoUploaded} handleLogin={handleLogin}/>
         </div>
     );
 };

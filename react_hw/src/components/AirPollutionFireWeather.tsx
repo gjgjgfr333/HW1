@@ -1,22 +1,27 @@
 import {useSelector} from "react-redux";
 import {useEffect, useState} from "react";
-import {getAirPopulationResult, prossesAirPopulation} from "../api/getAirPopulationResult";
+import {getAirPopulationResult, getNumberAirPopulation, prossesAirPopulation} from "../api/getAirPopulationResult";
 import React from "react";
+import {useTranslation} from "react-i18next";
+import './infoCompanents.css'
 
 
-const AirPollutionFireWeather = () => {
+
+const AirPollutionFireWeather = (props: any) => {
     const latitude = useSelector((state: any) => state.coordinates.lat);
     const longitude = useSelector((state: any) => state.coordinates.lon);
     const [air, setAir] = useState<(string | null)[]>([])
+    const [numberAir, setNumberAir] = useState<(string | null)[]>([])
+
+    const {t}= useTranslation()
 
 
     useEffect(() => {
         if (latitude && longitude) {
             getAirPopulationResult(latitude,longitude)
                 .then((data) => {
-                    console.log(data)
                     setAir(prossesAirPopulation(data))
-                    console.log(prossesAirPopulation(data))
+                    setNumberAir(getNumberAirPopulation(data))
 
                 })
                 .catch(error => {
@@ -26,14 +31,13 @@ const AirPollutionFireWeather = () => {
     }, [latitude, longitude]);
 
     return (
-        <div className={'data_main'}>
-            <h2>Прогноз загрязнения воздуха на 4 дня</h2>
-            {air.map((level, index) => (
-                <div className={'data'} key={index}>
-                    <div className={'data__text'}>День {index + 1}</div>
-                    <div className={'data__text'}>Уровень загрязнения: {level}</div>
-                </div>
-            ))}
+        <div className={'info'}>
+            <h2>{t("Index")}</h2>
+            <div className={'imgBlock'}>
+                <div className={'img1'}></div>
+                <div className={'numberInfo'}>{numberAir[props.expandedCardIndex]}</div>
+            </div>
+            <div className={'data__text'}>{air[props.expandedCardIndex]}</div>
         </div>
     );
 }
