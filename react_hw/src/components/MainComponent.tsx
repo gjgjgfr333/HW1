@@ -23,7 +23,6 @@ export const ForecastFiveDays = (props: any) => {
         if (latitude && longitude) {
             fetchWeatherData(latitude,longitude, i18n)
                 .then(data => {
-                    console.log('datda',data)
                     const {formattedDates,formattedTemperature,
                         formattedTemperatureFeels, humidity,
                         formattedWeather, wind, icon} = processWeatherData(data, i18n.language, i18n)
@@ -48,7 +47,7 @@ export const ForecastFiveDays = (props: any) => {
                                 <div>
                                     <div className={'city'}>
                                         {cityNow}
-                                        <div>{t('Now')}</div>
+                                        
                                     </div>
                                     <div className={'temperature_now'}>
                                         {formattedTemperature[index]}°C
@@ -71,7 +70,6 @@ export const ForecastFiveDays = (props: any) => {
                         ) : (
                             <div className={'little_card'}>
                                 <div className={'data_days'}>{getDays(singleDate, i18n)}</div>
-                                {/*<div className={'icon_2'}></div>*/}
                                 <img className={'icon_2'} src={`http://openweathermap.org/img/wn/${icon[index]}.png`}
                                      alt={'photoWeather'}/>
                                 <div className={'temp_2'}>{formattedTemperature[index]}°C</div>

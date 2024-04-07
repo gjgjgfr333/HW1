@@ -43,7 +43,6 @@ export const processWeatherData = (data: any, language: string, i18n: any) => {
         .map((item : any)=> item.weather[0].description);
     const newIcon = data.list.filter((item: WeatherItem, index: number) => index % 8 === 0)
         .map((item : any)=> item.weather[0].icon);
-    console.log('weather', newIcon)
     const newWind = extractData(data.list, 'wind.speed')
 
     return {
