@@ -8,8 +8,9 @@ import {useTranslation} from "react-i18next";
 export const ForecastFiveDays = (props: any) => {
     const [formattedDates, setFormattedDates] = useState<string[]>([]);
     const [formattedTemperature, setFormattedTemperature] = useState<number[]>([]);
-    const [formattedTemperatureFeels, setFormattedTemperatureFeels] = useState<number[]>([]);;
+    const [formattedTemperatureFeels, setFormattedTemperatureFeels] = useState<number[]>([]);
     const [formattedWeather, setFormattedWeather] = useState<(string|undefined)[]>([]);
+    const [icon, setIcon] = useState<(string|undefined)[]>([]);
     const latitude : string = useSelector((state : any ) => state.coordinates.lat);
     const longitude = useSelector((state : any ) => state.coordinates.lon);
     const cityNow = useSelector((state : any ) => state.coordinates.cityNow);
@@ -25,12 +26,13 @@ export const ForecastFiveDays = (props: any) => {
                     console.log('datda',data)
                     const {formattedDates,formattedTemperature,
                         formattedTemperatureFeels, humidity,
-                        formattedWeather, wind} = processWeatherData(data, i18n.language, i18n)
+                        formattedWeather, wind, icon} = processWeatherData(data, i18n.language, i18n)
                     setFormattedTemperature(formattedTemperature);
                     setFormattedTemperatureFeels(formattedTemperatureFeels);
                     props.setHumidity(humidity);
                     setFormattedWeather(formattedWeather);
                     setFormattedDates(formattedDates);
+                    setIcon(icon)
                     props.setWind(wind)
                 })
                 .catch(error => console.error('Error fetching weather data:', error));
@@ -57,17 +59,21 @@ export const ForecastFiveDays = (props: any) => {
                                     </div>
                                     <div className={'card_data'}>{formattedDates[index]}</div>
                                 </div>
-                                <div>
-                                    <div className={'icon'}></div>
+                                <div className={'nnn'}>
+                                    <img className={'icon'} src={`http://openweathermap.org/img/wn/${icon[index]}.png`}
+                                         alt={'photoWeather'}/>
+
                                     <div className={'card_data'}>
-                                        {formattedWeather}
+                                        {formattedWeather[index]}
                                     </div>
                                 </div>
                             </div>
                         ) : (
                             <div className={'little_card'}>
                                 <div className={'data_days'}>{getDays(singleDate, i18n)}</div>
-                                <div className={'icon_2'}></div>
+                                {/*<div className={'icon_2'}></div>*/}
+                                <img className={'icon_2'} src={`http://openweathermap.org/img/wn/${icon[index]}.png`}
+                                     alt={'photoWeather'}/>
                                 <div className={'temp_2'}>{formattedTemperature[index]}°C</div>
                             </div>
                         )}

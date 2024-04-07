@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import SwitchComponent from "./SwitchComponent";
 import {useSelector} from "react-redux";
 import './MenuStyle.css'
@@ -11,14 +11,31 @@ interface MenuProps {
 }
 
 const MenuComponent: React.FC<MenuProps> = ({isOpen,lightTheme}) => {
-    const photoUrl = useSelector((state:any) => state.photo.photoUrl)
-    const userName = useSelector((state:any) => state.logins.login)
+    useSelector((state:any) => state.logins.login);
+    const [photoUrl, setPhotoUrl] = useState<string | null>(null);
+    const [name, setName] = useState<string | null>(null);
+    useEffect(() => {
+        const localPhoto = localStorage.getItem('photo')
+        if (localPhoto){
+            setPhotoUrl(localPhoto)
+        }
+        const userName = localStorage.getItem('userName')
+        if (userName){
+            setName(userName)
+        }
+    }, []);
     return (
         <div className={`menu ${isOpen ? 'open' : ''}`}>
-            <img className={'avatar_manu'} src={photoUrl} alt={`ph`}/>
-            <div className={'userName'}>{userName}</div>
-            <SwitchComponent/>
-            <SwithLanguageComponent/>
+            <div className={'menu_inside'}>
+                <div className={'menu_center'}>
+                    {photoUrl && <img className={'avatar_manu'} src={photoUrl} alt="User Avatar" />}
+
+                    <div className={'userName'}>{name}</div>
+                </div>
+                <SwitchComponent/>
+                <SwithLanguageComponent/>
+            </div>
+
         </div>
     );
 };

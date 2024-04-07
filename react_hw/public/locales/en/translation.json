@@ -11,6 +11,8 @@
   "City": "Tiraspol",
   "Index": "Air Pollution Index",
   "humidity": "Humidity",
-  "wind": "Speed wind"
+  "wind": "Speed wind",
+  "theme": "theme",
+  "language": "language"
 
 }

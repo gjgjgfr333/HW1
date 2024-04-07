@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import {useDispatch} from "react-redux";
-import {setPhotoUrl} from "../redux/slice";
 import './AvatarStyle.css'
 
 interface AvatarProps {
@@ -9,7 +7,6 @@ interface AvatarProps {
 
 const AvatarComponent: React.FC<AvatarProps> = ({ onPhotoUpload }) => {
     const [imgAvatar, setImgAvatar] = useState<string | null>(null);
-    const dispatch = useDispatch();
     const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files && e.target.files[0];
         if (file) {
@@ -17,9 +14,7 @@ const AvatarComponent: React.FC<AvatarProps> = ({ onPhotoUpload }) => {
             reader.onload = () => {
                 if (typeof reader.result === 'string') {
                     setImgAvatar(reader.result);
-                    const url = reader.result
-                    dispatch(setPhotoUrl(url));
-                    console.log(url)
+                    localStorage.setItem('photo', reader.result)
                 }
             };
             reader.readAsDataURL(file);

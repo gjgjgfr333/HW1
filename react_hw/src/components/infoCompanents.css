@@ -57,3 +57,17 @@ h2{
     width: 64px;
     height: 108px;
 }
+@media screen and (max-width: 1032px){
+    .numberInfo{
+        font-size: 45px;
+        line-height: 78px;
+        color: var(--color);
+    }
+
+}
+@media screen and (max-width: 888px){
+    .info{
+        width: 100%;
+    }
+
+}

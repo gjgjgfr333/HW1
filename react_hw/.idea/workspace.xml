@@ -5,36 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5df564f9-750a-41d5-a292-5511b183e8ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/Frame1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/Group1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/Group12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/Group13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/Group2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/search.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/HumidityComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SpeedWindComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/infoCompanents.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helper/tempData.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helper/getLocalLang.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_03_2024_18_27_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_03_2024_18_27__Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_03_2024_18_28_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_03_2024_18_28__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/locales/en/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/locales/en/translation.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/locales/ru/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/locales/ru/translation.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/getAirPopulationResult.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/getAirPopulationResult.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/getWeatherResult.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/getWeatherResult.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AirPollutionFireWeather.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AirPollutionFireWeather.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/searchResult.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/searchResult.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AvatarComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AvatarComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AvatarStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AvatarStyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MainComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MainComponentStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainComponentStyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MenuComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MenuComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MenuStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MenuStyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SearchComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SearchStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/heal/extractData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/extractData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/heal/getDays.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/getDays.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SwitchComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SwitchComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SwithLanguageComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SwithLanguageComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SwithStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SwithStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/infoCompanents.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/infoCompanents.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/ThemeContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/ThemeContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/i18n.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/login/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/LoginPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/main/MainPages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main/MainPages.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/main/MainStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main/MainStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/themeCss/colors.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/themeCss/colors.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +73,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "react",
     "last_opened_file_path": "D:/учеба/задание/react_hw/public/images",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
@@ -167,6 +163,10 @@
       <workItem from="1711988134564" duration="11399000" />
       <workItem from="1712076789468" duration="8377000" />
       <workItem from="1712156366771" duration="6869000" />
+      <workItem from="1712242059363" duration="1088000" />
+      <workItem from="1712320852626" duration="207000" />
+      <workItem from="1712322800978" duration="12244000" />
+      <workItem from="1712490222035" duration="4812000" />
     </task>
     <servers />
   </component>

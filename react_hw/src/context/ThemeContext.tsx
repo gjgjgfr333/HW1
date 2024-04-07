@@ -1,6 +1,6 @@
 import React, {createContext, useState} from 'react';
 interface ContextProps {
-    isDarkMode : boolean,
+    isDarkMode : boolean|undefined,
     toggleTheme : () => void
 }
  export const ThemeContext = createContext<ContextProps>({
@@ -11,7 +11,13 @@ interface Props {
     children?: React.ReactNode
 }
 const ThemeProvider : React.FC<Props> =  ({children}) => {
-    const [darkTheme, setDarkTheme] = useState(true)
+    const [darkTheme, setDarkTheme] = useState(getLocalTheme())
+    function getLocalTheme (){
+        const savedTheme = localStorage.getItem('theme');
+        return savedTheme !== 'light';
+    }
+
+
     const toggleThemeHandler = () => {
         setDarkTheme((prevState)=> !prevState)
     }

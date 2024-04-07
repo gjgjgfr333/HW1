@@ -32,12 +32,18 @@ export const processWeatherData = (data: any, language: string, i18n: any) => {
             return date.toLocaleDateString(language, options);
         });
 
+
     const newTemperature: number[] = extractData(data.list, 'main.temp')
         .map(processTemperature);
     const newTemperatureFeels: number[] = extractData(data.list, 'main.feels_like')
         .map(processTemperature);
     const newHumidity:(string | undefined)[] = extractData(data.list, 'main.humidity');
-    const newWeather = extractData(data.list[0].weather, 'description');
+    // const newWeather = extractData(data.list.weather, 'description');
+    const newWeather = data.list.filter((item: WeatherItem, index: number) => index % 8 === 0)
+        .map((item : any)=> item.weather[0].description);
+    const newIcon = data.list.filter((item: WeatherItem, index: number) => index % 8 === 0)
+        .map((item : any)=> item.weather[0].icon);
+    console.log('weather', newIcon)
     const newWind = extractData(data.list, 'wind.speed')
 
     return {
@@ -46,7 +52,8 @@ export const processWeatherData = (data: any, language: string, i18n: any) => {
         formattedTemperature: newTemperature,
         formattedTemperatureFeels: newTemperatureFeels,
         humidity: newHumidity,
-        wind: newWind
+        wind: newWind,
+        icon: newIcon
     };
 };
 

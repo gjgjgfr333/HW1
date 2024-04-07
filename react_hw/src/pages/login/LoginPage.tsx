@@ -1,11 +1,8 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './LoginStyle.css'
 import {useNavigate} from "react-router-dom";
 import AvatarComponent from "../../components/AvatarComponent";
 import LoginButtonComponent from "../../components/LoginButtonComponent";
-import {useDispatch} from "react-redux";
-import {setLogins} from "../../redux/slice";
-
 
 
 const ForLoginPage = () => {
@@ -15,7 +12,13 @@ const ForLoginPage = () => {
     const [repeatPassword, setRepeatPassword] = useState<string>('');
     const [errorMessage, setErrorMessage] = useState<string>('');
     const navigate = useNavigate()
-    const dispatch = useDispatch()
+
+    useEffect(() => {
+        const savedUserOld = localStorage.getItem('oldUser');
+        if (savedUserOld === 'true') {
+            navigate('/pages/main');
+        }
+    }, []);
     const handleLogin = () => {
         const containsUpperCase: boolean = /[A-Z]/.test(password);
         const containsPunctuation: boolean = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/.test(password);
@@ -25,25 +28,30 @@ const ForLoginPage = () => {
 
         if (login.length < 6) {
             error = 'Логин должен содержать минимум 6 символов';
+            console.log(1)
         }
         if (login.length > 12) {
             error = 'Логин должен содержать максимум 12 символов';
+            console.log(2)
         }
         if (password.length < 8 || password.length > 14 || !containsUpperCase || containsPunctuation) {
             error = 'Пароль должен содержать от 8 до 14 символов, хотя бы одну заглавную букву, ' +
                 'одну цифру и без знаков препинания';
+            console.log(3)
         }
         if (password !== repeatPassword) {
             error = 'Пароль и повтор пароля не совпадают';
+            console.log(4)
         }
 
         setErrorMessage(error);
 
         if (!error) {
+            let enter = true
             console.log('Логин и пароль верны');
             navigate('/pages/main')
-            dispatch(setLogins ( login) )
-
+            localStorage.setItem('userName', login)
+            localStorage.setItem('oldUser', String(enter))
         }
     };
 

@@ -27,7 +27,11 @@
     transform: translate(-2px, -50%);
     background-color: blanchedalmond;
 }
-
+.text{
+    color: var(--color2);
+    font-family: 'Inter', serif;
+    font-size: 20px;
+}
 .switch_wrapper {
     position: relative;
     width: 50px; /* Ширина всего переключателя */
@@ -38,7 +42,12 @@
     transform: translate(-2px, -50%); /* Перемещение только круглого переключателя */
     background-color: blanchedalmond;
 }
-
+.main_switch{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .switch_round.dark {
     transform: translate(22px, -50%); /* Перемещение только круглого переключателя */
     background-color: black;

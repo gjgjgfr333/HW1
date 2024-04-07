@@ -36,7 +36,9 @@ const SearchComponent = () => {
     };
     const handleSearch = () => {
         searchResult(city, dispatch, i18n)
-
+    };
+    const clearInput = () => {
+        setCity('');
     };
     return (
         <header>
@@ -44,22 +46,31 @@ const SearchComponent = () => {
             <MenuComponent isOpen={isOpen} lightTheme/>
             <div className={'search_button'}>
                 <div>
-                    <input
-                        type="text"
-                        placeholder="Введите город"
-                        className="search"
-                        value={city}
-                        onChange={(e) => setCity(e.target.value)}
-                        onKeyPress={(e) => {
-                            if (e.key === 'Enter') {
-                                handleSearch(); // Добавлены скобки для вызова функции
-                            }
-                        }}
-                    />
-                    {suggestions.length > 0 && (
+                    <div>
+                        <input
+                            type="text"
+                            placeholder="Введите город"
+                            className="search"
+                            value={city}
+                            onChange={(e) => setCity(e.target.value)}
+                            onKeyPress={(e) => {
+                                if (e.key === 'Enter') {
+                                    handleSearch(); // Добавлены скобки для вызова функции
+                                }
+                            }}
+                        />
+                        <span
+                            className="clear-icon"
+                            id="clearInput"
+                            onClick={clearInput}
+                        ></span>
+                    </div>
+
+                    {suggestions.length > 3 && (
                         <div className="suggestions">
                             {suggestions.map((item, index) => (
-                                <div key={index} className="suggestion" onClick={() => handleSuggestionClick(item.cityNow)}>
+                                <div key={index} className="suggestion"
+                                     onClick={() => handleSuggestionClick(item.cityNow)}>
                                     {item.cityNow}
                                 </div>
                             ))}
@@ -67,7 +78,9 @@ const SearchComponent = () => {
                     )}
                 </div>
 
-                <button className={'button_search'} onClick={handleSearch}><div className={'icon_search'}></div></button>
+                <button className={'button_search'} onClick={handleSearch}>
+                    <div className={'icon_search'}></div>
+                </button>
             </div>
         </header>
     );

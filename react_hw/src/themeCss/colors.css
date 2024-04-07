@@ -36,6 +36,9 @@ html[data-theme="light"] {
     --card: #FFFFFF;
     --color2: #CCCBCB;
 }
+html{
+    overflow-x: hidden;
+}
 
 body {
     width: auto;

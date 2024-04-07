@@ -1,7 +1,7 @@
 @import url('../themeCss/colors.css');
 .card{
-    width: 555px;
-    height: 295px;
+    width: 100%;
+    height: 100%;
     border-radius: 40px;
     box-shadow: 4px 8px 20px rgb(63,40,207);
     box-sizing: border-box;
@@ -42,6 +42,7 @@
     border-radius: 50%;
 }
 .little_block{
+
     display: flex;
     gap: 12px;
     cursor: pointer;
@@ -76,4 +77,36 @@
     font-family: 'Inter', serif;
     font-size: 40px;
     margin-top: 18px;
+}
+@media screen and (max-width: 1220px){
+    .card{
+        width: 400px;
+        height: 260px;
+    }
+    .little_card{
+        height: 230px;
+        width: 96px;
+    }
+    .city{
+        font-size: 12px;
+        display: flex;
+    }
+    .temperature_now{
+        font-size: 52px;
+        margin-top: 15px;
+    }
+    .feelsLike{
+        font-size: 12px;
+        margin-top: 5px;
+    }
+    .card_data{
+        font-size: 12px;
+        margin-top: 15px;
+    }
+    .icon{
+        width: 150px;
+        height: 150px;
+        background-color: darkgoldenrod;
+        border-radius: 50%;
+    }
 }

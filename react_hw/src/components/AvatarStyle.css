@@ -4,8 +4,7 @@
     height: 250px;
     border-radius: 50%;
     background-color: var(--background-color);
-    border: 2px solid teal;
-    position: relative; /* Для позиционирования относительно */
+    position: relative;
     display: inline-block;
 }
 .avatar label{
