@@ -57,8 +57,8 @@
     display: flex;
     flex-direction: column;
     padding: 15px;
-
-
+    height: 100%;
+    width: 100%;
 }
 .data_days{
     font-family: 'Inter', serif;
@@ -77,6 +77,9 @@
     font-family: 'Inter', serif;
     font-size: 40px;
     margin-top: 18px;
+}
+@media screen and (max-width: 1220px){
+
 }
 @media screen and (max-width: 1220px){
     .card{
@@ -106,6 +109,38 @@
     .icon{
         width: 150px;
         height: 150px;
+        background-color: darkgoldenrod;
+        border-radius: 50%;
+    }
+}
+@media screen and (max-width: 424px){
+    .card{
+        width: 320px;
+        height: 200px;
+    }
+    .little_card{
+        height: 230px;
+        width: 96px;
+    }
+    .city{
+        font-size: 9px;
+        display: flex;
+    }
+    .temperature_now{
+        font-size: 30px;
+        margin-top: 10px;
+    }
+    .feelsLike{
+        font-size: 8px;
+        margin-top: 2px;
+    }
+    .card_data{
+        font-size: 9px;
+        margin-top: 10px;
+    }
+    .icon{
+        width: 100px;
+        height: 100px;
         background-color: darkgoldenrod;
         border-radius: 50%;
     }
