@@ -63,7 +63,7 @@ export const ForecastFiveDays = (props: any) => {
                                     <img className={'icon'} src={`http://openweathermap.org/img/wn/${icon[index]}.png`}
                                          alt={'photoWeather'}/>
 
-                                    <div className={'card_data'}>
+                                    <div className={'card_data1'}>
                                         {formattedWeather[index]}
                                     </div>
                                 </div>

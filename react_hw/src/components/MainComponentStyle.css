@@ -32,7 +32,14 @@
     font-family: 'Inter', serif;
     font-size: 16px;
     color: var(--color);
-    margin-top: 24px;
+    margin-top: 40px;
+    text-align: start;
+}
+.card_data1{
+    font-family: 'Inter', serif;
+    font-size: 16px;
+    color: var(--color);
+    margin-top: 14px;
     text-align: end;
 }
 .icon{
@@ -56,9 +63,7 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    padding: 15px;
-    height: 100%;
-    width: 100%;
+    padding: 25px 40px 15px 25px;
 }
 .data_days{
     font-family: 'Inter', serif;
@@ -135,8 +140,10 @@
         margin-top: 2px;
     }
     .card_data{
+
         font-size: 9px;
         margin-top: 10px;
+
     }
     .icon{
         width: 100px;
